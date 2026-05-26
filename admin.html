@@ -104,6 +104,7 @@
     input, select, textarea { font-family: inherit; }
     a { color: inherit; text-decoration: none; }
 
+    /* ── Login ── */
     #login-screen {
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       background: var(--yellow);
@@ -135,6 +136,7 @@
     .btn-login:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: 5px 5px 0 var(--ink); }
     .login-err { background: #FEE2E2; color: #B91C1C; padding: 10px 14px; border-radius: 10px; font-size: 14px; margin-top: 12px; display: none; }
 
+    /* ── Dashboard ── */
     #dashboard { display: none; min-height: 100vh; }
     .topbar {
       position: sticky; top: 0; z-index: 50;
@@ -158,6 +160,7 @@
     }
     .btn-logout:hover { transform: translate(-1px,-1px); }
 
+    /* ── Tabs ── */
     .tabs { display: flex; gap: 6px; padding: 20px 28px 0; }
     .tab-btn {
       padding: 11px 22px; border-radius: 14px 14px 0 0;
@@ -167,6 +170,7 @@
     }
     .tab-btn.active { background: var(--paper); }
 
+    /* ── Content area ── */
     .content { padding: 0 28px 40px; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
@@ -178,6 +182,7 @@
     .panel-header h2 { font-size: 24px; font-weight: 800; }
     .panel-header .count { font-family: var(--mono); font-size: 12px; opacity: .55; margin-left: 8px; }
 
+    /* ── Buttons ── */
     .btn-add {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 11px 20px; background: var(--ink); color: var(--yellow);
@@ -197,6 +202,7 @@
     .btn-toggle { background: var(--paper); font-size: 12px; padding: 5px 12px; }
     .btn-toggle.on { background: var(--green); color: #fff; border-color: var(--green); }
 
+    /* ── Table ── */
     .table-wrap { overflow-x: auto; border: 3px solid var(--ink); border-radius: 18px; background: var(--paper); box-shadow: 5px 5px 0 var(--ink); }
     table { width: 100%; border-collapse: collapse; }
     th {
@@ -224,9 +230,11 @@
     .td-actions { display: flex; gap: 6px; align-items: center; }
     .td-img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 2px solid var(--ink); }
     .sort-handle { cursor: grab; opacity: .35; font-size: 18px; padding: 0 4px; }
+
     .empty-state { text-align: center; padding: 56px; opacity: .5; }
     .empty-state p { font-size: 18px; font-weight: 600; margin-top: 10px; }
 
+    /* ── Modal ── */
     .modal-backdrop {
       position: fixed; inset: 0; background: rgba(20,17,15,.55);
       z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px;
@@ -288,6 +296,7 @@
       font-weight: 600; font-size: 15px;
     }
 
+    /* ── Toast ── */
     .toast {
       position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
       background: var(--ink); color: var(--yellow); padding: 12px 24px; border-radius: 999px;
@@ -296,6 +305,7 @@
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
 
+    /* ── Settings ── */
     .settings-group {
       background: var(--paper); border: 3px solid var(--ink); border-radius: 18px;
       padding: 20px 24px 24px; margin-bottom: 20px; box-shadow: 4px 4px 0 var(--ink);
@@ -308,6 +318,7 @@
     .settings-grid .form-group.full { grid-column: 1 / -1; }
     @media (max-width: 600px) { .settings-grid { grid-template-columns: 1fr; } }
 
+    /* ── Responsive ── */
     @media (max-width: 640px) {
       .topbar { padding: 0 16px; }
       .tabs, .content { padding-left: 16px; padding-right: 16px; }
@@ -317,6 +328,7 @@
 </head>
 <body>
 
+<!-- ════════════ LOGIN ════════════ -->
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">
@@ -344,6 +356,7 @@
   </div>
 </div>
 
+<!-- ════════════ DASHBOARD ════════════ -->
 <div id="dashboard">
   <div class="topbar">
     <div class="topbar-brand">
@@ -372,15 +385,22 @@
   </div>
 
   <div class="content">
+
+    <!-- ── Products Tab ── -->
     <div id="tab-products" class="tab-panel active">
       <div class="panel-header">
-        <div><h2>Προϊόντα <span class="count" id="products-count"></span></h2></div>
+        <div>
+          <h2>Προϊόντα <span class="count" id="products-count"></span></h2>
+        </div>
         <button class="btn-add" onclick="openProductModal()">+ Νέο προϊόν</button>
       </div>
       <div class="table-wrap">
         <table id="products-table">
           <thead>
-            <tr><th>⠿</th><th>Φωτ.</th><th>Όνομα</th><th>Κατηγορία</th><th>Τιμή</th><th>Ηλικία</th><th>Tag</th><th>Ενεργό</th><th>Ενέργειες</th></tr>
+            <tr>
+              <th>⠿</th><th>Φωτ.</th><th>Όνομα</th><th>Κατηγορία</th>
+              <th>Τιμή</th><th>Ηλικία</th><th>Tag</th><th>Ενεργό</th><th>Ενέργειες</th>
+            </tr>
           </thead>
           <tbody id="products-tbody">
             <tr><td colspan="9" class="empty-state"><p>Φόρτωση...</p></td></tr>
@@ -389,61 +409,129 @@
       </div>
     </div>
 
+    <!-- ── Settings Tab ── -->
     <div id="tab-settings" class="tab-panel">
       <div class="panel-header">
         <div><h2>Ρυθμίσεις site</h2></div>
         <button class="btn-add" onclick="saveSettings()">💾 Αποθήκευση αλλαγών</button>
       </div>
+
+      <!-- Επικοινωνία -->
       <div class="settings-group">
         <div class="settings-group-title">📞 Επικοινωνία</div>
         <div class="settings-grid">
-          <div class="form-group"><label>Τηλέφωνο (για href tel:)</label><input id="s-phone" type="text" placeholder="2221023391"/><span class="hint">Χωρίς κενά ή παύλες</span></div>
-          <div class="form-group"><label>Τηλέφωνο (εμφάνιση)</label><input id="s-phone-display" type="text" placeholder="2221 023391"/></div>
-          <div class="form-group"><label>Email</label><input id="s-email" type="email" placeholder="hello@paixnidokosmos.gr"/></div>
-          <div class="form-group"><label>Διεύθυνση</label><input id="s-address" type="text" placeholder="Ερμού 27, Χαλκίδα 34100"/></div>
-          <div class="form-group full"><label>Ώρες λειτουργίας</label><input id="s-hours" type="text" placeholder="Δευτ – Σαβ · 09:00 – 21:00"/></div>
+          <div class="form-group">
+            <label>Τηλέφωνο (για href tel:)</label>
+            <input id="s-phone" type="text" placeholder="2221023391"/>
+            <span class="hint">Χωρίς κενά ή παύλες</span>
+          </div>
+          <div class="form-group">
+            <label>Τηλέφωνο (εμφάνιση)</label>
+            <input id="s-phone-display" type="text" placeholder="2221 023391"/>
+            <span class="hint">Όπως θα φαίνεται στη σελίδα</span>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input id="s-email" type="email" placeholder="hello@paixnidokosmos.gr"/>
+          </div>
+          <div class="form-group">
+            <label>Διεύθυνση</label>
+            <input id="s-address" type="text" placeholder="Ερμού 27, Χαλκίδα 34100"/>
+          </div>
+          <div class="form-group full">
+            <label>Ώρες λειτουργίας</label>
+            <input id="s-hours" type="text" placeholder="Δευτ – Σαβ · 09:00 – 21:00"/>
+          </div>
         </div>
       </div>
+
+      <!-- Αρχική σελίδα -->
       <div class="settings-group">
         <div class="settings-group-title">🏠 Αρχική σελίδα — Στατιστικά</div>
         <div class="settings-grid">
-          <div class="form-group"><label>Αριθμός 1</label><input id="s-stat1-num" type="text" placeholder="47"/></div>
-          <div class="form-group"><label>Ετικέτα 1</label><input id="s-stat1-label" type="text" placeholder="χρόνια στη Χαλκίδα"/></div>
-          <div class="form-group"><label>Αριθμός 2</label><input id="s-stat2-num" type="text" placeholder="2.5K+"/></div>
-          <div class="form-group"><label>Ετικέτα 2</label><input id="s-stat2-label" type="text" placeholder="κωδικοί στο ράφι"/></div>
-          <div class="form-group"><label>Αριθμός 3</label><input id="s-stat3-num" type="text" placeholder="3"/></div>
-          <div class="form-group"><label>Ετικέτα 3</label><input id="s-stat3-label" type="text" placeholder="γενιές οικογένειας"/></div>
+          <div class="form-group">
+            <label>Αριθμός 1</label>
+            <input id="s-stat1-num" type="text" placeholder="47"/>
+          </div>
+          <div class="form-group">
+            <label>Ετικέτα 1</label>
+            <input id="s-stat1-label" type="text" placeholder="χρόνια στη Χαλκίδα"/>
+          </div>
+          <div class="form-group">
+            <label>Αριθμός 2</label>
+            <input id="s-stat2-num" type="text" placeholder="2.5K+"/>
+          </div>
+          <div class="form-group">
+            <label>Ετικέτα 2</label>
+            <input id="s-stat2-label" type="text" placeholder="κωδικοί στο ράφι"/>
+          </div>
+          <div class="form-group">
+            <label>Αριθμός 3</label>
+            <input id="s-stat3-num" type="text" placeholder="3"/>
+          </div>
+          <div class="form-group">
+            <label>Ετικέτα 3</label>
+            <input id="s-stat3-label" type="text" placeholder="γενιές οικογένειας"/>
+          </div>
         </div>
       </div>
+
+      <!-- Marquee -->
       <div class="settings-group">
-        <div class="settings-group-title">📢 Marquee</div>
+        <div class="settings-group-title">📢 Marquee (ταινία ανακοινώσεων)</div>
         <div class="settings-grid">
-          <div class="form-group full"><label>Στοιχεία marquee (χωρισμένα με κόμμα)</label><input id="s-marquee" type="text" placeholder="ΠΑΙΧΝΙΔΙΑ,ΕΚΠΑΙΔΕΥΤΙΚΑ,..."/></div>
+          <div class="form-group full">
+            <label>Στοιχεία marquee (χωρισμένα με κόμμα)</label>
+            <input id="s-marquee" type="text" placeholder="ΠΑΙΧΝΙΔΙΑ,ΕΚΠΑΙΔΕΥΤΙΚΑ,ΕΠΟΧΙΑΚΑ,ΔΩΡΑ"/>
+            <span class="hint">Π.χ.: ΠΑΙΧΝΙΔΙΑ,ΔΩΡΕΑΝ ΣΥΣΚΕΥΑΣΙΑ,ΝΕΕΣ ΑΦΙΞΕΙΣ</span>
+          </div>
         </div>
       </div>
+
+      <!-- Social Media -->
       <div class="settings-group">
         <div class="settings-group-title">📱 Social Media</div>
         <div class="settings-grid">
-          <div class="form-group"><label>Facebook URL</label><input id="s-fb" type="url" placeholder="https://facebook.com/..."/><span class="hint">Άδειο = εικονίδιο κρυμμένο</span></div>
-          <div class="form-group"><label>Instagram URL</label><input id="s-ig" type="url" placeholder="https://instagram.com/..."/></div>
-          <div class="form-group"><label>TikTok URL</label><input id="s-tt" type="url" placeholder="https://tiktok.com/..."/></div>
-          <div class="form-group"><label>YouTube URL</label><input id="s-yt" type="url" placeholder="https://youtube.com/..."/></div>
+          <div class="form-group">
+            <label>Facebook URL</label>
+            <input id="s-fb" type="url" placeholder="https://facebook.com/..."/>
+            <span class="hint">Άδειο = εικονίδιο κρυμμένο</span>
+          </div>
+          <div class="form-group">
+            <label>Instagram URL</label>
+            <input id="s-ig" type="url" placeholder="https://instagram.com/..."/>
+          </div>
+          <div class="form-group">
+            <label>TikTok URL</label>
+            <input id="s-tt" type="url" placeholder="https://tiktok.com/..."/>
+          </div>
+          <div class="form-group">
+            <label>YouTube URL</label>
+            <input id="s-yt" type="url" placeholder="https://youtube.com/..."/>
+          </div>
         </div>
       </div>
+
       <div style="padding: 8px 0 32px; text-align: right;">
         <button class="btn-add" onclick="saveSettings()">💾 Αποθήκευση αλλαγών</button>
       </div>
     </div>
 
+    <!-- ── Offers Tab ── -->
     <div id="tab-offers" class="tab-panel">
       <div class="panel-header">
-        <div><h2>Προσφορές <span class="count" id="offers-count"></span></h2></div>
+        <div>
+          <h2>Προσφορές <span class="count" id="offers-count"></span></h2>
+        </div>
         <button class="btn-add" onclick="openOfferModal()">+ Νέα προσφορά</button>
       </div>
       <div class="table-wrap">
         <table id="offers-table">
           <thead>
-            <tr><th>⠿</th><th>Badge</th><th>Τίτλος</th><th>Υπότιτλος</th><th>Art</th><th>Ενεργό</th><th>Ενέργειες</th></tr>
+            <tr>
+              <th>⠿</th><th>Badge</th><th>Τίτλος</th><th>Υπότιτλος</th>
+              <th>Art</th><th>Ενεργό</th><th>Ενέργειες</th>
+            </tr>
           </thead>
           <tbody id="offers-tbody">
             <tr><td colspan="7" class="empty-state"><p>Φόρτωση...</p></td></tr>
@@ -451,77 +539,209 @@
         </table>
       </div>
     </div>
+
   </div>
 </div>
 
-<!-- PRODUCT MODAL -->
+<!-- ════════════ PRODUCT MODAL ════════════ -->
 <div class="modal-backdrop" id="product-modal">
   <div class="modal">
-    <div class="modal-head"><h3 id="product-modal-title">Νέο Προϊόν</h3><button class="btn-close" onclick="closeModal('product-modal')">✕</button></div>
+    <div class="modal-head">
+      <h3 id="product-modal-title">Νέο Προϊόν</h3>
+      <button class="btn-close" onclick="closeModal('product-modal')">✕</button>
+    </div>
     <div class="modal-body">
       <input type="hidden" id="p-id"/>
       <div class="form-grid">
-        <div class="form-group full"><label>Όνομα προϊόντος *</label><input id="p-name" type="text" placeholder="π.χ. Τρενάκι Express"/></div>
-        <div class="form-group"><label>Κατηγορία *</label><select id="p-cat"><option value="toys">🧸 Παιχνίδια</option><option value="edu">📚 Εκπαιδευτικά</option><option value="seasonal">⭐ Εποχιακά</option><option value="gifts">🎁 Δώρα</option></select></div>
-        <div class="form-group"><label>Ηλικία</label><select id="p-age"><option value="Όλες">Όλες</option><option value="0+">0+</option><option value="3+">3+</option><option value="4+">4+</option><option value="5+">5+</option><option value="6+">6+</option></select></div>
-        <div class="form-group"><label>Τιμή (€) *</label><input id="p-price" type="number" step="0.01" min="0" placeholder="24.90"/></div>
-        <div class="form-group"><label>Παλιά τιμή (€)</label><input id="p-oldprice" type="number" step="0.01" min="0" placeholder="32.00"/></div>
-        <div class="form-group"><label>Tag</label><select id="p-tag"><option value="">— Κανένα —</option><option value="ΝΕΟ">ΝΕΟ</option><option value="HOT">HOT</option><option value="BESTSELLER">BESTSELLER</option><option value="ΕΟΡΤΑΣΤΙΚΟ">ΕΟΡΤΑΣΤΙΚΟ</option><option value="ΕΚΠΛΗΞΗ">ΕΚΠΛΗΞΗ</option></select></div>
-        <div class="form-group"><label>Εικονίδιο (art)</label><select id="p-art"><option value="car">🚂 car</option><option value="bear">🐻 bear</option><option value="cube">🎲 cube</option><option value="rocket">🚀 rocket</option><option value="drum">🥁 drum</option><option value="puzzle">🧩 puzzle</option><option value="crayons">🖍️ crayons</option><option value="dino">🦕 dino</option><option value="santa">🎅 santa</option><option value="balloon">🎈 balloon</option><option value="gift">🎁 gift</option></select></div>
-        <div class="form-group"><label>Χρώμα φόντου</label><select id="p-bg"><option value="yellow">🟡 Κίτρινο</option><option value="cream">🤍 Cream</option><option value="red">🔴 Κόκκινο</option><option value="dark">⚫ Σκούρο</option></select></div>
-        <div class="form-group full"><label>Φωτογραφία URL</label><input id="p-image" type="url" placeholder="https://..."/><span class="hint">Άδειο = SVG εικονίδιο</span></div>
-        <div class="form-group"><label>Σειρά εμφάνισης</label><input id="p-sort" type="number" min="0" placeholder="0"/></div>
-        <div class="form-group" style="justify-content:flex-end;padding-top:20px;"><div class="check-row"><input type="checkbox" id="p-active" checked/><label for="p-active">Ενεργό</label></div></div>
+        <div class="form-group full">
+          <label>Όνομα προϊόντος *</label>
+          <input id="p-name" type="text" placeholder="π.χ. Τρενάκι Express"/>
+        </div>
+        <div class="form-group">
+          <label>Κατηγορία *</label>
+          <select id="p-cat">
+            <option value="toys">🧸 Παιχνίδια</option>
+            <option value="edu">📚 Εκπαιδευτικά</option>
+            <option value="seasonal">⭐ Εποχιακά</option>
+            <option value="gifts">🎁 Δώρα</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ηλικία</label>
+          <select id="p-age">
+            <option value="Όλες">Όλες</option>
+            <option value="0+">0+</option>
+            <option value="3+">3+</option>
+            <option value="4+">4+</option>
+            <option value="5+">5+</option>
+            <option value="6+">6+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Τιμή (€) *</label>
+          <input id="p-price" type="number" step="0.01" min="0" placeholder="24.90"/>
+        </div>
+        <div class="form-group">
+          <label>Παλιά τιμή (€) — για διαγραφή</label>
+          <input id="p-oldprice" type="number" step="0.01" min="0" placeholder="32.00"/>
+        </div>
+        <div class="form-group">
+          <label>Tag (προαιρετικό)</label>
+          <select id="p-tag">
+            <option value="">— Κανένα —</option>
+            <option value="ΝΕΟ">ΝΕΟ</option>
+            <option value="HOT">HOT</option>
+            <option value="BESTSELLER">BESTSELLER</option>
+            <option value="ΕΟΡΤΑΣΤΙΚΟ">ΕΟΡΤΑΣΤΙΚΟ</option>
+            <option value="ΕΚΠΛΗΞΗ">ΕΚΠΛΗΞΗ</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Εικονίδιο (art)</label>
+          <select id="p-art">
+            <option value="car">🚂 car — Τρενάκι</option>
+            <option value="bear">🐻 bear — Αρκουδάκι</option>
+            <option value="cube">🎲 cube — Κύβος</option>
+            <option value="rocket">🚀 rocket — Πύραυλος</option>
+            <option value="drum">🥁 drum — Τύμπανο</option>
+            <option value="puzzle">🧩 puzzle — Παζλ</option>
+            <option value="crayons">🖍️ crayons — Κηρομπογιές</option>
+            <option value="dino">🦕 dino — Δεινόσαυρος</option>
+            <option value="santa">🎅 santa — Άι-Βασίλης</option>
+            <option value="balloon">🎈 balloon — Μπαλόνι</option>
+            <option value="gift">🎁 gift — Δώρο</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Χρώμα φόντου κάρτας</label>
+          <select id="p-bg">
+            <option value="yellow">🟡 Κίτρινο</option>
+            <option value="cream">🤍 Cream</option>
+            <option value="red">🔴 Κόκκινο</option>
+            <option value="dark">⚫ Σκούρο</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Φωτογραφία — URL (Google Drive ή άλλο)</label>
+          <input id="p-image" type="url" placeholder="https://drive.google.com/..."/>
+          <span class="hint">Άδειο = εμφανίζεται το εικονίδιο SVG</span>
+        </div>
+        <div class="form-group">
+          <label>Σειρά εμφάνισης</label>
+          <input id="p-sort" type="number" min="0" placeholder="0"/>
+        </div>
+        <div class="form-group" style="justify-content:flex-end;padding-top:20px;">
+          <div class="check-row">
+            <input type="checkbox" id="p-active" checked/>
+            <label for="p-active">Ενεργό (εμφανίζεται στο site)</label>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="modal-foot"><button class="btn-cancel" onclick="closeModal('product-modal')">Ακύρωση</button><button class="btn-save" id="btn-save-product" onclick="saveProduct()">Αποθήκευση</button></div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeModal('product-modal')">Ακύρωση</button>
+      <button class="btn-save" id="btn-save-product" onclick="saveProduct()">Αποθήκευση</button>
+    </div>
   </div>
 </div>
 
-<!-- OFFER MODAL -->
+<!-- ════════════ OFFER MODAL ════════════ -->
 <div class="modal-backdrop" id="offer-modal">
   <div class="modal">
-    <div class="modal-head"><h3 id="offer-modal-title">Νέα Προσφορά</h3><button class="btn-close" onclick="closeModal('offer-modal')">✕</button></div>
+    <div class="modal-head">
+      <h3 id="offer-modal-title">Νέα Προσφορά</h3>
+      <button class="btn-close" onclick="closeModal('offer-modal')">✕</button>
+    </div>
     <div class="modal-body">
       <input type="hidden" id="o-id"/>
       <div class="form-grid">
-        <div class="form-group full"><label>Badge *</label><input id="o-badge" type="text" placeholder="π.χ. Καλοκαιρινή προσφορά"/></div>
-        <div class="form-group"><label>Τίτλος *</label><input id="o-title" type="text" placeholder="π.χ. Έκπτωση 30%"/></div>
-        <div class="form-group"><label>Υπότιτλος</label><input id="o-titleaccent" type="text" placeholder="π.χ. σε εξωτερικά παιχνίδια"/></div>
-        <div class="form-group full"><label>Κείμενο</label><textarea id="o-text" placeholder="Περιγραφή..."></textarea></div>
-        <div class="form-group"><label>Art</label><select id="o-art"><option value="rocket">🚀 rocket</option><option value="gift">🎁 gift</option><option value="crayons">🖍️ crayons</option><option value="balloon">🎈 balloon</option><option value="car">🚂 car</option><option value="dino">🦕 dino</option></select></div>
-        <div class="form-group"><label>Σειρά</label><input id="o-sort" type="number" min="0" placeholder="0"/></div>
-        <div class="form-group full"><div class="check-row"><input type="checkbox" id="o-active" checked/><label for="o-active">Ενεργή</label></div></div>
+        <div class="form-group full">
+          <label>Badge (μικρή ετικέτα) *</label>
+          <input id="o-badge" type="text" placeholder="π.χ. Καλοκαιρινή προσφορά"/>
+        </div>
+        <div class="form-group">
+          <label>Τίτλος (κεφαλαίο) *</label>
+          <input id="o-title" type="text" placeholder="π.χ. Έκπτωση 30%"/>
+        </div>
+        <div class="form-group">
+          <label>Υπότιτλος (έντονο χρώμα)</label>
+          <input id="o-titleaccent" type="text" placeholder="π.χ. σε όλα τα εξωτερικά παιχνίδια"/>
+        </div>
+        <div class="form-group full">
+          <label>Κείμενο περιγραφής</label>
+          <textarea id="o-text" placeholder="Περιγραφή της προσφοράς..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Εικονίδιο (art)</label>
+          <select id="o-art">
+            <option value="rocket">🚀 rocket</option>
+            <option value="gift">🎁 gift</option>
+            <option value="crayons">🖍️ crayons</option>
+            <option value="balloon">🎈 balloon</option>
+            <option value="car">🚂 car</option>
+            <option value="dino">🦕 dino</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Σειρά εμφάνισης</label>
+          <input id="o-sort" type="number" min="0" placeholder="0"/>
+        </div>
+        <div class="form-group full">
+          <div class="check-row">
+            <input type="checkbox" id="o-active" checked/>
+            <label for="o-active">Ενεργή (εμφανίζεται στο site)</label>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="modal-foot"><button class="btn-cancel" onclick="closeModal('offer-modal')">Ακύρωση</button><button class="btn-save" id="btn-save-offer" onclick="saveOffer()">Αποθήκευση</button></div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeModal('offer-modal')">Ακύρωση</button>
+      <button class="btn-save" id="btn-save-offer" onclick="saveOffer()">Αποθήκευση</button>
+    </div>
   </div>
 </div>
 
+<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
+/* ═══════════════════════════════════════════════════════
+   SUPABASE CONFIG — βάλε τα ίδια keys με το data.jsx
+   ═══════════════════════════════════════════════════════ */
 const SUPABASE_URL      = "https://dgsijgqqnjtsxpujkinj.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnc2lqZ3Fxbmp0c3hwdWpraW5qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MTE1MDEsImV4cCI6MjA5NTM4NzUwMX0.JqOtx3-Ewk_SFgAx0nX3mFfz6lbX13ijhQt-_K2-z08";
+
 let sb = null;
 
+/* ─── Init ─── */
 window.addEventListener('DOMContentLoaded', async () => {
-  if (SUPABASE_URL === "YOUR_SUPABASE_URL") { showLoginError("⚠️ Βάλε τα Supabase keys"); return; }
+  if (SUPABASE_URL === "YOUR_SUPABASE_URL") {
+    showLoginError("⚠️ Βάλε τα Supabase keys στο αρχείο admin.html");
+    return;
+  }
   sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   const { data: { session } } = await sb.auth.getSession();
   if (session) showDashboard();
-  document.getElementById('login-pass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+  // Enter key on login form
+  document.getElementById('login-pass').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
 });
 
+/* ─── Auth ─── */
 async function doLogin() {
   const email = document.getElementById('login-email').value.trim();
   const pass  = document.getElementById('login-pass').value;
   if (!email || !pass) { showLoginError("Συμπλήρωσε email και κωδικό."); return; }
+
   const btn = document.getElementById('btn-login');
   btn.disabled = true; btn.textContent = 'Είσοδος...';
   document.getElementById('login-err').style.display = 'none';
+
   const { error } = await sb.auth.signInWithPassword({ email, password: pass });
   btn.disabled = false; btn.textContent = 'Είσοδος';
+
   if (error) { showLoginError("Λάθος email ή κωδικός."); return; }
   showDashboard();
 }
@@ -532,14 +752,20 @@ async function doLogout() {
   document.getElementById('login-screen').style.display = 'flex';
 }
 
-function showLoginError(msg) { const el = document.getElementById('login-err'); el.textContent = msg; el.style.display = 'block'; }
+function showLoginError(msg) {
+  const el = document.getElementById('login-err');
+  el.textContent = msg; el.style.display = 'block';
+}
 
 function showDashboard() {
   document.getElementById('login-screen').style.display = 'none';
-  document.getElementById('dashboard').style.display = 'block';
-  loadProducts(); loadOffers(); loadSettings();
+  document.getElementById('dashboard').style.display    = 'block';
+  loadProducts();
+  loadOffers();
+  loadSettings();
 }
 
+/* ─── Tabs ─── */
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -547,12 +773,16 @@ function switchTab(name, btn) {
   btn.classList.add('active');
 }
 
+/* ═══════════════════════════════════════
+   PRODUCTS
+═══════════════════════════════════════ */
 let _products = [];
+
 async function loadProducts() {
   const tbody = document.getElementById('products-tbody');
   tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><p>Φόρτωση...</p></td></tr>';
   const { data, error } = await sb.from('products').select('*').order('sort_order').order('id');
-  if (error) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><p>⚠️ Σφάλμα</p></td></tr>'; return; }
+  if (error) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><p>⚠️ Σφάλμα φόρτωσης</p></td></tr>'; return; }
   _products = data || [];
   document.getElementById('products-count').textContent = `(${_products.length})`;
   renderProducts();
@@ -560,190 +790,267 @@ async function loadProducts() {
 
 function renderProducts() {
   const tbody = document.getElementById('products-tbody');
-  if (_products.length === 0) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><p>Δεν υπάρχουν προϊόντα.</p></td></tr>'; return; }
+  if (_products.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><p>Δεν υπάρχουν προϊόντα ακόμα.</p></td></tr>';
+    return;
+  }
   tbody.innerHTML = _products.map(p => `
     <tr>
-      <td><span class="sort-handle">⠿</span></td>
+      <td><span class="sort-handle" title="Σύρε για αλλαγή σειράς">⠿</span></td>
       <td>${p.image ? `<img class="td-img" src="${p.image}" alt="${esc(p.name)}" onerror="this.style.display='none'"/>` : '—'}</td>
       <td class="td-name">${esc(p.name)}</td>
       <td><span class="td-cat">${esc(p.cat)}</span></td>
       <td class="td-price">${parseFloat(p.price).toFixed(2)}€${p.old_price ? ` <small style="text-decoration:line-through;opacity:.5">${parseFloat(p.old_price).toFixed(2)}€</small>` : ''}</td>
-      <td>${esc(p.age||'—')}</td>
+      <td>${esc(p.age || '—')}</td>
       <td>${p.tag ? `<span class="td-tag">${esc(p.tag)}</span>` : '—'}</td>
-      <td><button class="btn-sm btn-toggle ${p.active?'on':''}" onclick="toggleProduct(${p.id},${!p.active})">${p.active?'✓ Ναι':'✗ Όχι'}</button></td>
-      <td><div class="td-actions"><button class="btn-sm btn-edit" onclick="openProductModal(${p.id})">✏️</button><button class="btn-sm btn-delete" onclick="deleteProduct(${p.id},'${esc(p.name)}')">🗑️</button></div></td>
-    </tr>`).join('');
+      <td>
+        <button class="btn-sm btn-toggle ${p.active ? 'on' : ''}" onclick="toggleProduct(${p.id}, ${!p.active})">
+          ${p.active ? '✓ Ναι' : '✗ Όχι'}
+        </button>
+      </td>
+      <td>
+        <div class="td-actions">
+          <button class="btn-sm btn-edit" onclick="openProductModal(${p.id})">✏️ Επεξ.</button>
+          <button class="btn-sm btn-delete" onclick="deleteProduct(${p.id}, '${esc(p.name)}')">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
 }
 
 function openProductModal(id) {
   const p = id ? _products.find(x => x.id === id) : null;
   document.getElementById('product-modal-title').textContent = p ? 'Επεξεργασία Προϊόντος' : 'Νέο Προϊόν';
-  document.getElementById('p-id').value = p?p.id:'';
-  document.getElementById('p-name').value = p?p.name:'';
-  document.getElementById('p-cat').value = p?p.cat:'toys';
-  document.getElementById('p-age').value = p?(p.age||'Όλες'):'Όλες';
-  document.getElementById('p-price').value = p?p.price:'';
-  document.getElementById('p-oldprice').value = p?(p.old_price||''):'';
-  document.getElementById('p-tag').value = p?(p.tag||'):'';
-  document.getElementById('p-art').value = p?(p.art||'gift'):'gift';
-  document.getElementById('p-bg').value = p?(p.bg||'yellow'):'yellow';
-  document.getElementById('p-image').value = p?(p.image||'):'';
-  document.getElementById('p-sort').value = p?(p.sort_order||0):_products.length;
-  document.getElementById('p-active').checked = p?!!p.active:true;
+  document.getElementById('p-id').value       = p ? p.id : '';
+  document.getElementById('p-name').value     = p ? p.name : '';
+  document.getElementById('p-cat').value      = p ? p.cat : 'toys';
+  document.getElementById('p-age').value      = p ? (p.age || 'Όλες') : 'Όλες';
+  document.getElementById('p-price').value    = p ? p.price : '';
+  document.getElementById('p-oldprice').value = p ? (p.old_price || '') : '';
+  document.getElementById('p-tag').value      = p ? (p.tag || '') : '';
+  document.getElementById('p-art').value      = p ? (p.art || 'gift') : 'gift';
+  document.getElementById('p-bg').value       = p ? (p.bg || 'yellow') : 'yellow';
+  document.getElementById('p-image').value    = p ? (p.image || '') : '';
+  document.getElementById('p-sort').value     = p ? (p.sort_order || 0) : _products.length;
+  document.getElementById('p-active').checked = p ? !!p.active : true;
   openModal('product-modal');
 }
 
 async function saveProduct() {
-  const id = document.getElementById('p-id').value;
+  const id   = document.getElementById('p-id').value;
   const name = document.getElementById('p-name').value.trim();
   const price = parseFloat(document.getElementById('p-price').value);
   if (!name) { alert('Το όνομα είναι υποχρεωτικό.'); return; }
-  if (isNaN(price)||price<0) { alert('Βάλε έγκυρη τιμή.'); return; }
+  if (isNaN(price) || price < 0) { alert('Βάλε έγκυρη τιμή.'); return; }
+
   const btn = document.getElementById('btn-save-product');
-  btn.disabled=true; btn.textContent='Αποθήκευση...';
+  btn.disabled = true; btn.textContent = 'Αποθήκευση...';
+
   const oldPrice = parseFloat(document.getElementById('p-oldprice').value);
   const row = {
-    name, cat: document.getElementById('p-cat').value, age: document.getElementById('p-age').value,
-    price, old_price: isNaN(oldPrice)?null:oldPrice,
-    tag: document.getElementById('p-tag').value||null,
-    art: document.getElementById('p-art').value, bg: document.getElementById('p-bg').value,
-    image: document.getElementById('p-image').value.trim()||null,
-    sort_order: parseInt(document.getElementById('p-sort').value)||0,
-    active: document.getElementById('p-active').checked,
+    name:       name,
+    cat:        document.getElementById('p-cat').value,
+    age:        document.getElementById('p-age').value,
+    price:      price,
+    old_price:  isNaN(oldPrice) ? null : oldPrice,
+    tag:        document.getElementById('p-tag').value || null,
+    art:        document.getElementById('p-art').value,
+    bg:         document.getElementById('p-bg').value,
+    image:      document.getElementById('p-image').value.trim() || null,
+    sort_order: parseInt(document.getElementById('p-sort').value) || 0,
+    active:     document.getElementById('p-active').checked,
   };
-  const { error } = id ? await sb.from('products').update(row).eq('id',id) : await sb.from('products').insert(row);
-  btn.disabled=false; btn.textContent='Αποθήκευση';
-  if (error) { alert('Σφάλμα: '+error.message); return; }
-  closeModal('product-modal'); showToast(id?'✓ Ενημερώθηκε!':'✓ Προστέθηκε!'); loadProducts();
+
+  const { error } = id
+    ? await sb.from('products').update(row).eq('id', id)
+    : await sb.from('products').insert(row);
+
+  btn.disabled = false; btn.textContent = 'Αποθήκευση';
+  if (error) { alert('Σφάλμα: ' + error.message); return; }
+  closeModal('product-modal');
+  showToast(id ? '✓ Προϊόν ενημερώθηκε!' : '✓ Προϊόν προστέθηκε!');
+  loadProducts();
 }
 
 async function deleteProduct(id, name) {
   if (!confirm(`Διαγραφή "${name}";`)) return;
-  const { error } = await sb.from('products').delete().eq('id',id);
-  if (error) { alert('Σφάλμα: '+error.message); return; }
-  showToast('🗑️ Διαγράφηκε'); loadProducts();
+  const { error } = await sb.from('products').delete().eq('id', id);
+  if (error) { alert('Σφάλμα: ' + error.message); return; }
+  showToast('🗑️ Προϊόν διαγράφηκε');
+  loadProducts();
 }
 
-async function toggleProduct(id, active) { await sb.from('products').update({active}).eq('id',id); loadProducts(); }
+async function toggleProduct(id, active) {
+  await sb.from('products').update({ active }).eq('id', id);
+  loadProducts();
+}
 
+/* ═══════════════════════════════════════
+   OFFERS
+═══════════════════════════════════════ */
 let _offers = [];
+
 async function loadOffers() {
   const tbody = document.getElementById('offers-tbody');
   tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><p>Φόρτωση...</p></td></tr>';
   const { data, error } = await sb.from('offers').select('*').order('sort_order').order('id');
-  if (error) { tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><p>⚠️ Σφάλμα</p></td></tr>'; return; }
-  _offers = data||[];
+  if (error) { tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><p>⚠️ Σφάλμα φόρτωσης</p></td></tr>'; return; }
+  _offers = data || [];
   document.getElementById('offers-count').textContent = `(${_offers.length})`;
   renderOffers();
 }
 
 function renderOffers() {
   const tbody = document.getElementById('offers-tbody');
-  if (_offers.length===0) { tbody.innerHTML='<tr><td colspan="7" class="empty-state"><p>Δεν υπάρχουν προσφορές.</p></td></tr>'; return; }
+  if (_offers.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><p>Δεν υπάρχουν προσφορές ακόμα.</p></td></tr>';
+    return;
+  }
   tbody.innerHTML = _offers.map(o => `
     <tr>
       <td><span class="sort-handle">⠿</span></td>
-      <td>${o.badge?`<span class="td-tag">${esc(o.badge)}</span>`:'—'}</td>
+      <td>${o.badge ? `<span class="td-tag">${esc(o.badge)}</span>` : '—'}</td>
       <td class="td-name">${esc(o.title)}</td>
-      <td style="opacity:.75">${esc(o.title_accent||'—')}</td>
-      <td><span class="td-cat">${esc(o.art||'—')}</span></td>
-      <td><button class="btn-sm btn-toggle ${o.active?'on':''}" onclick="toggleOffer(${o.id},${!o.active})">${o.active?'✓ Ναι':'✗ Όχι'}</button></td>
-      <td><div class="td-actions"><button class="btn-sm btn-edit" onclick="openOfferModal(${o.id})">✏️</button><button class="btn-sm btn-delete" onclick="deleteOffer(${o.id},'${esc(o.title)}')">🗑️</button></div></td>
-    </tr>`).join('');
+      <td style="opacity:.75">${esc(o.title_accent || '—')}</td>
+      <td><span class="td-cat">${esc(o.art || '—')}</span></td>
+      <td>
+        <button class="btn-sm btn-toggle ${o.active ? 'on' : ''}" onclick="toggleOffer(${o.id}, ${!o.active})">
+          ${o.active ? '✓ Ναι' : '✗ Όχι'}
+        </button>
+      </td>
+      <td>
+        <div class="td-actions">
+          <button class="btn-sm btn-edit" onclick="openOfferModal(${o.id})">✏️ Επεξ.</button>
+          <button class="btn-sm btn-delete" onclick="deleteOffer(${o.id}, '${esc(o.title)}')">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
 }
 
 function openOfferModal(id) {
-  const o = id?_offers.find(x=>x.id===id):null;
-  document.getElementById('offer-modal-title').textContent = o?'Επεξεργασία Προσφοράς':'Νέα Προσφορά';
-  document.getElementById('o-id').value=o?o.id:'';
-  document.getElementById('o-badge').value=o?(o.badge||'):'';
-  document.getElementById('o-title').value=o?o.title:'';
-  document.getElementById('o-titleaccent').value=o?(o.title_accent||'):'';
-  document.getElementById('o-text').value=o?(o.text||'):'';
-  document.getElementById('o-art').value=o?(o.art||'gift'):'gift';
-  document.getElementById('o-sort').value=o?(o.sort_order||0):_offers.length;
-  document.getElementById('o-active').checked=o?!!o.active:true;
+  const o = id ? _offers.find(x => x.id === id) : null;
+  document.getElementById('offer-modal-title').textContent = o ? 'Επεξεργασία Προσφοράς' : 'Νέα Προσφορά';
+  document.getElementById('o-id').value          = o ? o.id : '';
+  document.getElementById('o-badge').value       = o ? (o.badge || '') : '';
+  document.getElementById('o-title').value       = o ? o.title : '';
+  document.getElementById('o-titleaccent').value = o ? (o.title_accent || '') : '';
+  document.getElementById('o-text').value        = o ? (o.text || '') : '';
+  document.getElementById('o-art').value         = o ? (o.art || 'gift') : 'gift';
+  document.getElementById('o-sort').value        = o ? (o.sort_order || 0) : _offers.length;
+  document.getElementById('o-active').checked    = o ? !!o.active : true;
   openModal('offer-modal');
 }
 
 async function saveOffer() {
-  const id=document.getElementById('o-id').value;
-  const title=document.getElementById('o-title').value.trim();
+  const id    = document.getElementById('o-id').value;
+  const title = document.getElementById('o-title').value.trim();
   if (!title) { alert('Ο τίτλος είναι υποχρεωτικός.'); return; }
-  const btn=document.getElementById('btn-save-offer');
-  btn.disabled=true; btn.textContent='Αποθήκευση...';
-  const row={
-    badge: document.getElementById('o-badge').value.trim()||null,
-    title, title_accent: document.getElementById('o-titleaccent').value.trim()||null,
-    text: document.getElementById('o-text').value.trim()||null,
-    art: document.getElementById('o-art').value,
-    sort_order: parseInt(document.getElementById('o-sort').value)||0,
-    active: document.getElementById('o-active').checked,
+
+  const btn = document.getElementById('btn-save-offer');
+  btn.disabled = true; btn.textContent = 'Αποθήκευση...';
+
+  const row = {
+    badge:        document.getElementById('o-badge').value.trim() || null,
+    title:        title,
+    title_accent: document.getElementById('o-titleaccent').value.trim() || null,
+    text:         document.getElementById('o-text').value.trim() || null,
+    art:          document.getElementById('o-art').value,
+    sort_order:   parseInt(document.getElementById('o-sort').value) || 0,
+    active:       document.getElementById('o-active').checked,
   };
-  const { error } = id?await sb.from('offers').update(row).eq('id',id):await sb.from('offers').insert(row);
-  btn.disabled=false; btn.textContent='Αποθήκευση';
-  if (error) { alert('Σφάλμα: '+error.message); return; }
-  closeModal('offer-modal'); showToast(id?'✓ Ενημερώθηκε!':'✓ Προστέθηκε!'); loadOffers();
+
+  const { error } = id
+    ? await sb.from('offers').update(row).eq('id', id)
+    : await sb.from('offers').insert(row);
+
+  btn.disabled = false; btn.textContent = 'Αποθήκευση';
+  if (error) { alert('Σφάλμα: ' + error.message); return; }
+  closeModal('offer-modal');
+  showToast(id ? '✓ Προσφορά ενημερώθηκε!' : '✓ Προσφορά προστέθηκε!');
+  loadOffers();
 }
 
 async function deleteOffer(id, title) {
   if (!confirm(`Διαγραφή "${title}";`)) return;
-  const { error } = await sb.from('offers').delete().eq('id',id);
-  if (error) { alert('Σφάλμα: '+error.message); return; }
-  showToast('🗑️ Διαγράφηκε'); loadOffers();
+  const { error } = await sb.from('offers').delete().eq('id', id);
+  if (error) { alert('Σφάλμα: ' + error.message); return; }
+  showToast('🗑️ Προσφορά διαγράφηκε');
+  loadOffers();
 }
 
-async function toggleOffer(id, active) { await sb.from('offers').update({active}).eq('id',id); loadOffers(); }
+async function toggleOffer(id, active) {
+  await sb.from('offers').update({ active }).eq('id', id);
+  loadOffers();
+}
 
+/* ═══════════════════════════════════════
+   SETTINGS
+═══════════════════════════════════════ */
 const SETTINGS_FIELDS = [
-  {id:'s-phone',key:'phone',default:'2221023391'},
-  {id:'s-phone-display',key:'phone_display',default:'2221 023391'},
-  {id:'s-email',key:'email',default:'hello@paixnidokosmos.gr'},
-  {id:'s-address',key:'address',default:'Ερμού 27, Χαλκίδα 34100'},
-  {id:'s-hours',key:'hours',default:'Δευτ – Σαβ · 09:00 – 21:00'},
-  {id:'s-stat1-num',key:'stat1_num',default:'47'},
-  {id:'s-stat1-label',key:'stat1_label',default:'χρόνια στη Χαλκίδα'},
-  {id:'s-stat2-num',key:'stat2_num',default:'2.5K+'},
-  {id:'s-stat2-label',key:'stat2_label',default:'κωδικοί στο ράφι'},
-  {id:'s-stat3-num',key:'stat3_num',default:'3'},
-  {id:'s-stat3-label',key:'stat3_label',default:'γενιές οικογένειας'},
-  {id:'s-marquee',key:'marquee_items',default:'ΠΑΙΧΝΙΔΙΑ,ΕΚΠΑΙΔΕΥΤΙΚΑ,ΕΠΟΧΙΑΚΑ,ΔΩΡΑ'},
-  {id:'s-fb',key:'facebook_url',default:''},
-  {id:'s-ig',key:'instagram_url',default:''},
-  {id:'s-tt',key:'tiktok_url',default:''},
-  {id:'s-yt',key:'youtube_url',default:''},
+  { id: 's-phone',        key: 'phone',         default: '2221023391' },
+  { id: 's-phone-display',key: 'phone_display',  default: '2221 023391' },
+  { id: 's-email',        key: 'email',          default: 'hello@paixnidokosmos.gr' },
+  { id: 's-address',      key: 'address',        default: 'Ερμού 27, Χαλκίδα 34100' },
+  { id: 's-hours',        key: 'hours',          default: 'Δευτ – Σαβ · 09:00 – 21:00' },
+  { id: 's-stat1-num',    key: 'stat1_num',      default: '47' },
+  { id: 's-stat1-label',  key: 'stat1_label',    default: 'χρόνια στη Χαλκίδα' },
+  { id: 's-stat2-num',    key: 'stat2_num',      default: '2.5K+' },
+  { id: 's-stat2-label',  key: 'stat2_label',    default: 'κωδικοί στο ράφι' },
+  { id: 's-stat3-num',    key: 'stat3_num',      default: '3' },
+  { id: 's-stat3-label',  key: 'stat3_label',    default: 'γενιές οικογένειας' },
+  { id: 's-marquee',      key: 'marquee_items',  default: 'ΠΑΙΧΝΙΔΙΑ,ΕΚΠΑΙΔΕΥΤΙΚΑ,ΕΠΟΧΙΑΚΑ,ΔΩΡΑ,ΔΩΡΕΑΝ ΣΥΣΚΕΥΑΣΙΑ,ΠΑΡΑΛΑΒΗ ΑΠΟ ΤΟ ΚΑΤΑΣΤΗΜΑ' },
+  { id: 's-fb',           key: 'facebook_url',   default: '' },
+  { id: 's-ig',           key: 'instagram_url',  default: '' },
+  { id: 's-tt',           key: 'tiktok_url',     default: '' },
+  { id: 's-yt',           key: 'youtube_url',    default: '' },
 ];
 
 async function loadSettings() {
-  const {data,error} = await sb.from('settings').select('key,value');
-  if (error) return;
-  const map = Object.fromEntries((data||[]).map(r=>[r.key,r.value]));
-  SETTINGS_FIELDS.forEach(f => { const el=document.getElementById(f.id); if(el) el.value=map[f.key]!==undefined?map[f.key]:f.default; });
+  const { data, error } = await sb.from('settings').select('key, value');
+  if (error) { console.warn('Settings load error:', error.message); return; }
+  const map = Object.fromEntries((data || []).map(r => [r.key, r.value]));
+  SETTINGS_FIELDS.forEach(f => {
+    const el = document.getElementById(f.id);
+    if (el) el.value = map[f.key] !== undefined ? map[f.key] : f.default;
+  });
 }
 
 async function saveSettings() {
   const btn = document.querySelector('#tab-settings .btn-add');
-  const orig = btn.textContent; btn.disabled=true; btn.textContent='Αποθήκευση...';
-  const rows = SETTINGS_FIELDS.map(f=>({key:f.key,value:(document.getElementById(f.id)?.value??f.default).trim()}));
-  const {error} = await sb.from('settings').upsert(rows,{onConflict:'key'});
-  btn.disabled=false; btn.textContent=orig;
-  if (error) { alert('Σφάλμα: '+error.message); return; }
+  const origText = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Αποθήκευση...';
+
+  const rows = SETTINGS_FIELDS.map(f => ({
+    key:   f.key,
+    value: (document.getElementById(f.id)?.value ?? f.default).trim(),
+  }));
+
+  const { error } = await sb.from('settings').upsert(rows, { onConflict: 'key' });
+  btn.disabled = false; btn.textContent = origText;
+  if (error) { alert('Σφάλμα αποθήκευσης: ' + error.message); return; }
   showToast('✓ Ρυθμίσεις αποθηκεύτηκαν!');
 }
 
+/* ─── Modal helpers ─── */
 function openModal(id)  { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+/* Close modal on backdrop click */
 document.querySelectorAll('.modal-backdrop').forEach(el => {
-  el.addEventListener('click', e => { if(e.target===el) el.classList.remove('open'); });
+  el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); });
 });
 
+/* ─── Toast ─── */
 function showToast(msg) {
-  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
+/* ─── Escape HTML ─── */
 function esc(str) {
-  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 </script>
 </body>

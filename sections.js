@@ -1,1 +1,631 @@
-LyogU2VjdGlvbiBjb21wb25lbnRzICovCgpjb25zdCBfZ3MgPSAoa2V5LCBmYWxsYmFjaykgPT4gKHdpbmRvdy5TSVRFX1NFVFRJTkdTICYmIHdpbmRvdy5TSVRFX1NFVFRJTkdTW2tleV0gIT09IHVuZGVmaW5lZCAmJiB3aW5kb3cuU0lURV9TRVRUSU5HU1trZXldICE9PSAnJykgPyB3aW5kb3cuU0lURV9TRVRUSU5HU1trZXldIDogKGZhbGxiYWNrICE9PSB1bmRlZmluZWQgPyBmYWxsYmFjayA6ICcnKTsKCmNvbnN0IE5hdiA9ICh7IGFjdGl2ZSwgb25OYXYgfSkgPT4gewogIGNvbnN0IFttb2JpbGVPcGVuLCBzZXRNb2JpbGVPcGVuXSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBjbG9zZSA9ICgpID0+IHNldE1vYmlsZU9wZW4oZmFsc2UpOwogIGNvbnN0IGdvID0gKGlkKSA9PiB7IG9uTmF2KGlkKTsgY2xvc2UoKTsgfTsKICByZXR1cm4gKAogICAgPD4KICAgICAgPG5hdiBjbGFzc05hbWU9Im5hdiI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lciBuYXYtaW5uZXIiPgogICAgICAgICAgPGEgaHJlZj0iI2hvbWUiIGNsYXNzTmFtZT0iYnJhbmQiIG9uQ2xpY2s9eyhlKSA9PiB7IGUucHJldmVudERlZmF1bHQoKTsgZ28oImhvbWUiKTsgfX0+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJicmFuZC1tYXJrIj4KICAgICAgICAgICAgICA8c3ZnIHZpZXdCb3g9IjAgMCAzMiAyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIwIj4KICAgICAgICAgICAgICAgIDxyZWN0IHg9IjIiIHk9IjEwIiB3aWR0aD0iMjIiIGhlaWdodD0iOSIgcng9IjEuNSIgZmlsbD0iI0ZGRDYwQSIgc3Ryb2tlPSIjMTQxMTBGIiBzdHJva2VXaWR0aD0iMS42Ii8+CiAgICAgICAgICAgICAgICA8cmVjdCB4PSIxOCIgeT0iNSIgd2lkdGg9IjkiIGhlaWdodD0iOSIgcng9IjEuNSIgZmlsbD0iI0ZGRDYwQSIgc3Ryb2tlPSIjMTQxMTBGIiBzdHJva2VXaWR0aD0iMS42Ii8+CiAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSI4IiBjeT0iMjAiIHI9IjIuNSIgZmlsbD0iIzE0MTEwRiIvPgogICAgICAgICAgICAgICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMi41IiBmaWxsPSIjMTQxMTBGIi8+CiAgICAgICAgICAgICAgICA8cmVjdCB4PSI2IiB5PSIzIiB3aWR0aD0iMyIgaGVpZ2h0PSI3IiBmaWxsPSIjRkZENjBBIiBzdHJva2U9IiMxNDExMEYiIHN0cm9rZVdpZHRoPSIxLjYiLz4KICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJicmFuZC1uYW1lIj4KICAgICAgICAgICAgICDOoM6xzrnPh869zrnOtM6/zrrPjM+DzrzOv8+CCiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJzbWFsbCI+zpHOvc6xzrPOvc+Oz4PPhM6/z4UgwrcgzqfOsc67zrrOr860zrE8L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9hPgogICAgICAgICAgPHVsIGNsYXNzTmFtZT17YG5hdi1saW5rcyR7bW9iaWxlT3BlbiA/ICIgbW9iaWxlLW9wZW4iIDogIiJ9YH0+CiAgICAgICAgICAgIHt3aW5kb3cuTkFWX0lURU1TLm1hcChpID0+ICgKICAgICAgICAgICAgICA8bGkga2V5PXtpLmlkfT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9e2AjJHtpLmlkfWB9IGNsYXNzTmFtZT17YWN0aXZlID09PSBpLmlkID8gImFjdGl2ZSIgOiAiIn0KICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eyhlKSA9PiB7IGUucHJldmVudERlZmF1bHQoKTsgZ28oaS5pZCk7IH19PgogICAgICAgICAgICAgICAgICB7aS5sYWJlbH0KICAgICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICApKX0KICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgIDxhIGhyZWY9e2B0ZWw6JHtfZ3MoJ3Bob25lJywnMjIyMTAyMzM5MScpfWB9IGNsYXNzTmFtZT0ibW9iaWxlLW5hdi1jdGEiPgogICAgICAgICAgICAgICAg8J+TniB7X2dzKCdwaG9uZScsJzIyMjEwMjMzOTEnKX0KICAgICAgICAgICAgICA8L2E+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICA8L3VsPgogICAgICAgICAgPGEgaHJlZj17YHRlbDoke19ncygncGhvbmUnLCcyMjIxMDIzMzkxJyl9YH0gY2xhc3NOYW1lPSJuYXYtY3RhIj4KICAgICAgICAgICAgPEljb24gbmFtZT0icGhvbmUiIHNpemU9ezE2fS8+CiAgICAgICAgICAgIHtfZ3MoJ3Bob25lJywnMjIyMTAyMzM5MScpfQogICAgICAgICAgPC9hPgogICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9Im5hdi1tb2JpbGUtdG9nZ2xlIgogICAgICAgICAgICBhcmlhLWxhYmVsPXttb2JpbGVPcGVuID8gIs6azrvOtc6vz4POuc68zr8gbWVudSIgOiAizobOvc6/zrnOs868zrEgbWVudSJ9CiAgICAgICAgICAgIGFyaWEtZXhwYW5kZWQ9e21vYmlsZU9wZW59CiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU9wZW4odiA9PiAhdil9PgogICAgICAgICAgICA8SWNvbiBuYW1lPXttb2JpbGVPcGVuID8gImNsb3NlIiA6ICJtZW51In0gc2l6ZT17MjB9Lz4KICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgIDwvZGl2PgogICAgICA8L25hdj4KICAgICAge21vYmlsZU9wZW4gJiYgPGRpdiBjbGFzc05hbWU9Im5hdi1vdmVybGF5IiBvbkNsaWNrPXtjbG9zZX0gYXJpYS1oaWRkZW49InRydWUiLz59CiAgICA8Lz4KICApOwp9OwoKY29uc3QgSGVybyA9ICh7IG9uTmF2LCBzcGVlZCwgbW90aW9uIH0pID0+IHsKICBjb25zdCB0cmFpblN0eWxlID0geyBhbmltYXRpb25EdXJhdGlvbjogYCR7MjggLSBzcGVlZCAqIDJ9c2AgfTsKICByZXR1cm4gKAogICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJoZXJvIiBpZD0iaG9tZSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXIgaGVyby1pbm5lciI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9Imhlcm8tY29weSI+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9Imhlcm8tZXllYnJvdyI+PHNwYW4gY2xhc3NOYW1lPSJkb3QiPjwvc3Bhbj7Oo8+EzrcgzqfOsc67zrrOr860zrEgzrHPgM+MIM+Ezr8gMTk3ODwvc3Bhbj4KICAgICAgICAgIDxoMT7OnyDOus+Mz4POvM6/z4Igz4TOv8+FIDxzcGFuIGNsYXNzTmFtZT0iYWNjZW50LXJlZCI+z4DOsc65z4fOvc65zrTOuc6/z408L3NwYW4+PGJyLz7Ovs61zrrOuc69zqwgPHNwYW4gY2xhc3NOYW1lPSJzcXVpZ2dsZSI+zrXOtM+OITwvc3Bhbj48L2gxPgogICAgICAgICAgPHAgY2xhc3NOYW1lPSJoZXJvLWxlYWQiPs6nzrnOu865zqzOtM61z4Igz4DOsc65z4fOvc6vzrTOuc6xLCDOtc+Azr/Ph865zrHOus6sIM61zq/OtM63IM66zrHOuSDOrc6+z4XPgM69zrEgz4TOuc+Az4TOuSDPgM6/z4UgzrHOs86xz4DOrM61zrkgz4TOsSDPgM6xzrnOtM65zqwgzrXOtM+OIM66zrHOuSDPhM+BzrXOuc+CIM6zzrXOvc65zrXPgi48L3A+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iaGVyby1hY3Rpb25zIj4KICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9ImJ0biBwcmltYXJ5IiBvbkNsaWNrPXsoKSA9PiBvbk5hdigiY2F0ZWdvcmllcyIpfT7OlM61z4Igz4TOuc+CIM66zrHPhM63zrPOv8+BzqlOtc+CIDxJY29uIG5hbWU9ImFycm93IiBzaXplPXsxOH0vPjwvYnV0dG9uPgogICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0iYnRuIiBvbkNsaWNrPXsoKSA9PiBvbk5hdigib2ZmZXJzIil9PjxJY29uIG5hbWU9InNwYXJrbGUiIHNpemU9ezE4fS8+IM6gz4HOv8+Dz4bOv8+BzqXOvjwvYnV0dG9uPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iaGVyby1zdGF0cyI+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzdGF0Ij48ZGl2IGNsYXNzTmFtZT0ibnVtIj57X2dzKCdzdGF0MV9udW0nLCc0NycpfTwvZGl2PjxkaXYgY2xhc3NOYW1lPSJsYmwiPntfZ3MoJ3N0YXQxX2xhYmVsJywnz4fPgc+MzrXOuc6xIM+Dz4TOtyDOp86xzrvOus6vzrTOsScpfTwvZGl2PjwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3RhdCI+PGRpdiBjbGFzc05hbWU9Im51bSI+e19ncygnc3RhdDJfbnVtJywnMi41SysnKX08L2Rpdj48ZGl2IGNsYXNzTmFtZT0ibGJsIj57X2dzKCdzdGF0Ml9sYWJlbCcsJ866z4nOtM65zrrOv86vIM+Dz4TOvyDPgc6sz4bOuScpfTwvZGl2PjwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3RhdCI+PGRpdiBjbGFzc05hbWU9Im51bSI+e19ncygnc3RhdDNfbnVtJywnMycpfTwvZGl2PjxkaXYgY2xhc3NOYW1lPSJsYmwiPntfZ3MoJ3N0YXQzX2xhYmVsJywnzrPOtc69zrnOrc+CIM6/zrnOus6/zrPOrc69zrXOuc6xz4InKX08L2Rpdj48L2Rpdj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoZXJvLXN0YWdlIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzdW4iPjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNsb3VkIGNsb3VkLTEiPjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNsb3VkIGNsb3VkLTIiPjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNsb3VkIGNsb3VkLTMiPjwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InN0YXIgczEiPjwvZGl2PjxkaXYgY2xhc3NOYW1lPSJzdGFyIHMyIj48L2Rpdj48ZGl2IGNsYXNzTmFtZT0ic3RhciBzMyI+PC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ2lmdC1mbG9hdCI+PEdpZnRCb3ggc2l6ZT17MTMwfS8+PC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmFsbG9vbiI+PEJhbGxvb24gc2l6ZT17Njh9IGNvbG9yPSIjRTYzMzI5Ii8+PC9kaXY+CiAgICAgICAgICB7bW90aW9uICE9PSBmYWxzZSAmJiAoCiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0cmFpbi13cmFwIiBzdHlsZT17dHJhaW5TdHlsZX0+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJvYiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic21va2UiIHN0eWxlPXt7IGxlZnQ6IDE2MiwgYm90dG9tOiAxMzAgfX0+CiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwdWZmIiBzdHlsZT17eyBhbmltYXRpb25EZWxheTogIjBzIiB9fT48L2Rpdj4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InB1ZmYiIHN0eWxlPXt7IGFuaW1hdGlvbkRlbGF5OiAiMC4zcyIgfX0+PC9kaXY+CiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwdWZmIiBzdHlsZT17eyBhbmltYXRpb25EZWxheTogIjAuNnMiIH19PjwvZGl2PgogICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHVmZiIgc3R5bGU9e3sgYW5pbWF0aW9uRGVsYXk6ICIwLjlzIiB9fT48L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPFRyYWluIHNpemU9ezI0MH0vPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICl9CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idHJhY2siPjxkaXYgY2xhc3NOYW1lPSJyYWlsIHRvcCI+PC9kaXY+PGRpdiBjbGFzc05hbWU9InRpZXMiPjwvZGl2PjxkaXYgY2xhc3NOYW1lPSJyYWlsIGJvdCI+PC9kaXY+PC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgogICk7Cn07Cgpjb25zdCBNYXJxdWVlID0gKCkgPT4gewogIGNvbnN0IGRlZmF1bHRJdGVtcyA9ICLOoM6RzpnOp865zpTOmc6RLM6VzprOoM6Rzpnzpm5Omc6RLM6VzqDOj86nzpnOkc6aztEsMs6VzpHcOzrOlc6VzqHOsMOFzqzGVc6Rz4nOos6QLM6VMs6Rz4POks6UzqLOlc6Vzq0gzqLOlM6bztLOkszZzsrOuM6Yzp7OkyI7CiAgY29uc3QgaXRlbXMgPSBfZ3MoJ21hcnF1ZWVfaXRlbXMnLCBkZWZhdWx0SXRlbXMpLnNwbGl0KCcsJykubWFwKHMgPT4gcy50cmltKCkpLmZpbHRlcihCb29sZWFuKTsKICBjb25zdCByb3cgPSAoCiAgICA8c3Bhbj4KICAgICAge2l0ZW1zLm1hcCgoaXQsIGkpID0+ICgKICAgICAgICA8UmVhY3QuRnJhZ21lbnQga2V5PXtpfT57aXR9PHNwYW4gY2xhc3NOYW1lPSJkb3QiPuKYhTwvc3Bhbj48L1JlYWN0LkZyYWdtZW50PgogICAgICApKX0KICAgIDwvc3Bhbj4KICApOwogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0ibWFycXVlZSI+PGRpdiBjbGFzc05hbWU9Im1hcnF1ZWUtdHJhY2siPntyb3d9e3Jvd317cm93fTwvZGl2PjwvZGl2PgogICk7Cn07Cgpjb25zdCBDYXRlZ29yaWVzID0gKHsgb25QaWNrIH0pID0+IHsKICBjb25zdCBhcnRGb3IgPSAoYSkgPT4gewogICAgaWYgKGEgPT09ICJibG9ja3MiKSByZXR1cm4gPEljb25CbG9ja3MvPjsKICAgIGlmIChhID09PSAiYm9vayIpIHJldHVybiA8SWNvbkJvb2svPjsKICAgIGlmIChhID09PSAic3RhciIpIHJldHVybiA8SWNvblN0YXIvPjsKICAgIGlmIChhID09PSAiZ2lmdCIpIHJldHVybiA8SWNvbkdpZnQvPjsKICAgIHJldHVybiBudWxsOwogIH07CiAgcmV0dXJuICgKICAgIDxzZWN0aW9uIGlkPSJjYXRlZ29yaWVzIj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lciI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNlY3Rpb24taGVhZCI+CiAgICAgICAgICA8ZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZXllYnJvdyIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1yZWQpIiB9fT7CtyDOus6xz4TOt86zzr/Pgc6vzrXPgjwvZGl2PgogICAgICAgICAgICA8aDIgc3R5bGU9e3sgbWFyZ2luVG9wOiAxMCB9fT7OlM65zqzOu861zr7Otc6JIM+EzrEgz4jOsc+Hzr3Otc65z4I8YnIvPuKAlCDPhM+MIM6tzrfPh86/z4XOvM61LjwvaDI+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibGVhZCI+zozOu86xIM+EzrEgzrrOu86xz4POuc66zqwgzrHOs86xz4DOt868zq3Ovc6xLCDPjM67zrEgz4TOsSDOvc6tz6Egz4TPgc61zrvOrCwgzrrOsc65IM+MLM+Ezrkgz4fPgc61zrnOrM62zrXPg86xzrkgzrPOuc6xIM6zzrXOvc6tz4TOb865zrEsIM6zzrnOv8+Bz4TOrc+CLCDOtM65zrHOus6/z4DOrc+CIM66zrHOuSDOus6/PhHPgc6xz4PPhM65zrrOrc+CIM6xz4DOv86zzrXPhc68zrHPhM65zr3Orc+CLjwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2F0LWdyaWQiPgogICAgICAgICAge3dpbmRvdy5DQVRFR09SWV9DQVJEUy5tYXAoYyA9PiAoCiAgICAgICAgICAgIDxkaXYga2V5PXtjLmlkfSBjbGFzc05hbWU9e2BjYXQtY2FyZCAke2MudGhlbWV9YH0gb25DbGljaz17KCkgPT4gb25QaWNrKGMuaWQpfT4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2F0LWFydCI+e2FydEZvcihjLmFydCl9PC9kaXY+CiAgICAgICAgICAgICAgPGRpdj48aDM+e2MudGl0bGV9PC9oMz48ZGl2IGNsYXNzTmFtZT0iY2F0LWNvdW50Ij57Yy5jb3VudH08L2Rpdj48L2Rpdj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2F0LWFycm93Ij48SWNvbiBuYW1lPSJhcnJvdyIgc2l6ZT17MTZ9Lz48L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgKTsKfTsKCmNvbnN0IEFHRV9PUFRJT05TID0gWwogIHsgdmFsdWU6ICJhbGwiLCBsYWJlbDogIs6MzrvOtc+CIiB9LCB7IHZhbHVlOiAiMCsiLCBsYWJlbDogIjArIiB9LCB7IHZhbHVlOiAiMysiLCBsYWJlbDogIjMrIiB9LAogIHsgdmFsdWU6ICI0KyIsIGxhYmVsOiAiNCsiIH0sIHsgdmFsdWU6ICI1KyIsIGxhYmVsOiAiNSsiIH0sIHsgdmFsdWU6ICI2KyIsIGxhYmVsOiAiNisiIH0sCl07Cgpjb25zdCBQcm9kdWN0cyA9ICh7IGZpbHRlciwgc2V0RmlsdGVyLCBvbkFkZCwgYWRkZWRGbGFzaCwgZmF2b3JpdGVzLCB0b2dnbGVGYXYsIGRhdGFWZXJzaW9uIH0pID0+IHsKICBjb25zdCBbc2VhcmNoLCBzZXRTZWFyY2hdID0gUmVhY3QudXNlU3RhdGUoIiIpOwogIGNvbnN0IFthZ2VGaWx0ZXIsIHNldEFnZUZpbHRlcl0gPSBSZWFjdC51c2VTdGF0ZSgiYWxsIik7CiAgY29uc3QgZmlsdGVyZWQgPSBSZWFjdC51c2VNZW1vKCgpID0+IHsKICAgIGxldCByZXN1bHQgPSBbLi4ud2luZG93LlBST0RVQ1RTXTsKICAgIGlmIChmaWx0ZXIgIT09ICJhbGwiKSByZXN1bHQgPSByZXN1bHQuZmlsdGVyKHAgPT4gcC5jYXQgPT09IGZpbHRlcik7CiAgICBpZiAoYWdlRmlsdGVyICE9PSAiYWxsIikgcmVzdWx0ID0gcmVzdWx0LmZpbHRlcihwID0+IHAuYWdlID09PSBhZ2VGaWx0ZXIpOwogICAgaWYgKHNlYXJjaC50cmltKCkpIHsgY29uc3QgcSA9IHNlYXJjaC50b0xvd2VyQ2FzZSgpLnRyaW0oKTsgcmVzdWx0ID0gcmVzdWx0LmZpbHRlcihwID0+IHAubmFtZS50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKHEpKTsgfQogICAgcmV0dXJuIHJlc3VsdDsKICB9LCBbZmlsdGVyLCBhZ2VGaWx0ZXIsIHNlYXJjaCwgZGF0YVZlcnNpb25dKTsKCiAgcmV0dXJuICgKICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0icHJvZHVjdHMiIGlkPSJwcm9kdWN0cyI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXIiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzZWN0aW9uLWhlYWQiPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImV5ZWJyb3ciIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tcmVkKSIgfX0+wrcoIM60zrfOvM6/z4bOuc67zq4gz4TOjs+BzrE8L2Rpdj4KICAgICAgICAgICAgPGgyIHN0eWxlPXt7IG1hcmdpblRvcDogMTAgfX0+zqTOuSDOsc6zzrHPgM6/z43OvSDPhM6xIM+AzrHOuc60zrnOrDxici8+zrHPhc+Ezq3PgiDPhM65z4IgzrzOrc+BzrXPgi48L2gyPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8cCBjbGFzc05hbWU9ImxlYWQiPs6Vz4DOuc67zrXOs868zq3Ovc6xIM6xz4DPjCDOtc68zqzPgi4gzpTOv866zrnOvM6xz4POvM6tzr3OsSDOsc+Az4wgz4TOsSDPgM6xzrnOtM65zqwgz4TOv8+FIM68zrHOs86xzrbOuc6/z40uIM6gz4HPjM+DzrjOtc+DzrUgz4PPhM6/IM66zrHOu86szrjOuSDPg86/z4Ugz4wsIM+EzrfOvSDPg86/z4UgzrHPgc6tz4POtc65IOKAlCDOtyDPgM6xz4HOsc6zzrPOtc67zq/OsSDOv867zr/Ous67zrfPgc+Ozr3Otc+EzrHOuSDPg8+Ezr8gzrrOsc+EzqzPg8+EzrfOvM6xLjwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2F0LXRhYnMiPgogICAgICAgICAge3dpbmRvdy5DQVRFR09SSUVTLm1hcChjID0+ICgKICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e2MuaWR9IGNsYXNzTmFtZT17YGNhdC10YWIgJHtmaWx0ZXIgPT09IGMuaWQgPyAiYWN0aXZlIiA6ICIifWB9IG9uQ2xpY2s9eygpID0+IHNldEZpbHRlcihjLmlkKX0+e2MubGFiZWx9PC9idXR0b24+CiAgICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHJvZHVjdC1jb250cm9scyI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic2VhcmNoLWJhciI+CiAgICAgICAgICAgIDxzdmcgY2xhc3NOYW1lPSJzZWFyY2gtaWNvbiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2VXaWR0aD0iMi41Ij4KICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PHBhdGggZD0ibTIxIDIxLTQuMzUtNC4zNSIvPgogICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgPGlucHV0IHR5cGU9InNlYXJjaCIgcGxhY2Vob2xkZXI9Is6Rzr3Osc62zq7PhM63z4POtyDPgM+Bzr/Ouc+Mzr3PhM6/z4IuLi4iIHZhbHVlPXtzZWFyY2h9IG9uQ2hhbmdlPXtlID0+IHNldFNlYXJjaChlLnRhcmdldC52YWx1ZSl9IGFyaWEtbGFiZWw9Is6Rzr3Osc62zq7PhM63z4POtyDPgM+Bzr/Ouc+Mzr3PhM+Jzr0iLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFnZS1maWx0ZXIiPgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImFnZS1sYWJlbCI+zpfOu865zrrOr86xOjwvc3Bhbj4KICAgICAgICAgICAge0FHRV9PUFRJT05TLm1hcChvcHQgPT4gKAogICAgICAgICAgICAgIDxidXR0b24ga2V5PXtvcHQudmFsdWV9IGNsYXNzTmFtZT17YGFnZS1idG4gJHthZ2VGaWx0ZXIgPT09IG9wdC52YWx1ZSA/ICJhY3RpdmUiIDogIiJ9YH0gb25DbGljaz17KCkgPT4gc2V0QWdlRmlsdGVyKG9wdC52YWx1ZSl9PntvcHQubGFiZWx9PC9idXR0b24+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InByb2R1Y3QtZ3JpZCI+CiAgICAgICAgICB7ZmlsdGVyZWQubGVuZ3RoID09PSAwID8gKAogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibm8tcmVzdWx0cyI+PGRpdiBjbGFzc05hbWU9ImVtb2ppIj7wn5SNPC9kaXY+PHA+zpTOtc69IM6yz4HOrc64zrfOus6xzr0gz4DPgc6/zrnPjM69z4TOsS48YnIvPs6Uzr/Ous6vzrzOsc+DzrUgzrTOuc6xz4bOv8+BzrXPhM65zrrOriDOsc69zrHOts6uz4TOt8+DzrcuPC9wPjwvZGl2PgogICAgICAgICAgKSA6IGZpbHRlcmVkLm1hcChwID0+ICgKICAgICAgICAgICAgPGRpdiBrZXk9e3AuaWR9IGNsYXNzTmFtZT0icHJvZHVjdCI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9e2Bwcm9kdWN0LWltZyAke3AuYmd9YH0+CiAgICAgICAgICAgICAgICB7cC50YWcgJiYgPHNwYW4gY2xhc3NOYW1lPXtgcHJvZHVjdC10YWcgJHtwLnRhZyA9PT0gIkhPVCIgPyAiaG90IiA6ICIifWB9PntwLnRhZ308L3NwYW4+fQogICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9e2Bwcm9kdWN0LWZhdiAke2Zhdm9yaXRlcy5pbmNsdWRlcyhwLmlkKSA/ICJvbiIgOiAiIn1gfSBvbkNsaWNrPXsoKSA9PiB0b2dnbGVGYXYocC5pZCl9IGFyaWEtbGFiZWw9Is6RzrPOsc+AzrfOvM6tzr3OvyI+CiAgICAgICAgICAgICAgICAgIDxJY29uIG5hbWU9e2Zhdm9yaXRlcy5pbmNsdWRlcyhwLmlkKSA/ICJoZWFydCIgOiAiaGVhcnRPdXRsaW5lIn0gc2l6ZT17MTZ9Lz4KICAgICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgICAge3AuaW1hZ2UgPyA8aW1nIHNyYz17cC5pbWFnZX0gYWx0PXtwLm5hbWV9IGxvYWRpbmc9ImxhenkiLz4gOiA8UHJvZHVjdEFydCBraW5kPXtwLmFydH0vPn0KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHJvZHVjdC1ib2R5Ij4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtZXRhIj7Ol867zrnOus6vzrEge3AuYWdlfTwvZGl2PgogICAgICAgICAgICAgICAgPGgzPntwLm5hbWV9PC9oMz4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwcm9kdWN0LXJvdyI+CiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwcm9kdWN0LXByaWNlIj4KICAgICAgICAgICAgICAgICAgICB7cC5vbGRQcmljZSAmJiA8c3BhbiBjbGFzc05hbWU9Im9sZCI+e3Aub2xkUHJpY2UudG9GaXhlZCgyKX3igqw8L3NwYW4+fQogICAgICAgICAgICAgICAgICAgIHtwLnByaWNlLnRvRml4ZWQoMil94oKsCiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT17YHByb2R1Y3QtYWRkICR7YWRkZWRGbGFzaCA9PT0gcC5pZCA/ICJhZGRlZCIgOiAiIn1gfSBvbkNsaWNrPXsoKSA9PiBvbkFkZChwKX0gYXJpYS1sYWJlbD0izqDPgc6/z4POuM6uzrrOtyDPg8+Ezr8gzrrOsc67zqzOuM65Ij4KICAgICAgICAgICAgICAgICAgICA8SWNvbiBuYW1lPXthZGRlZEZsYXNoID09PSBwLmlkID8gImNoZWNrIiA6ICJwbHVzIn0gc2l6ZT17MTh9Lz4KICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L3NlY3Rpb24+CiAgKTsKfTsKCmNvbnN0IEFib3V0ID0gKCkgPT4gKAogIDxzZWN0aW9uIGlkPSJhYm91dCI+CiAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFpbmVyIGFib3V0LWdyaWQiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJvdXQtbGVhZCI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImV5ZWJyb3ciIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tcmVkKSIgfX0+wrcoIM63IM65z4PPhM6/z4HOr86xIM68zrHPgjwvZGl2PgogICAgICAgIDxoMiBzdHlsZT17eyBtYXJnaW5Ub3A6IDEwIH19Ps6kz4HOtc65z4IgzrPOtc69zrnOrc+CLCDOrc69zrEgzrzOsc6zzrHOts6szrrOuSwgz4fOuc67zrnOrOOOtM61z4Igz4fOsc68z4zOs861zrvOsS48L2gyPgogICAgICAgIDxwPs6fIM6gzrHOuc+Hzr3Ouc60z4zOus6/z4POvM6/z4IgzpHOvc6xzrPOvc+Oz4PPhM6/z4Ugzr7OtM66zq/Ovc63z4POtSDPic+CIM6tzr3OsSDOvM65zrrPgc+MIM6/zrnOus6/zrPOtc69zrXOuc6xzrrPjCDOus6xz4TOrM+Dz4TOt868zrEgz4PPhM63zr0gzrrOsc+BzrTOuc6sIM+EzrfPgiDOp86xzrvOus6vzrTOsc+CLiDOo868zq3Pgc6xLCDOtyDPhM+Bzq/PhM63IM6zzrXOvc65zqwgz4TOt8+CIM6/zrnOus6/zrPOrc69zrXOuc6xz4Igz4PPhc69zrXPh86vzrbOtc65IM68zrUgz4TOt869IM6vzrTOuc6xIM6xzrPOrM+AzrcuPC9wPgogICAgICAgIDxwPs6UzrXOvSDOtc6vzrzOsc+Dz4TOtSDOsc67z4XPg86vzrTOsS4gzpXOr868zrHPg8+EzrUgzrPOtc6vz4TOv869zrXPgi4gzo3OubPhM6L gg3OtM69zrE26drOvM76yz4DOrCDOvc6x IM+AzrXOuc+CIMK7zrrOsc67zrfOvM6tz4BOsMK7LjwvcD4KICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblRvcDogMjIsIGRpc3BsYXk6ICJmbGV4IiwgZ2FwOiAxMiwgZmxleFdyYXA6ICJ3cmFwIiB9fT4KICAgICAgICAgIDxhIGNsYXNzTmFtZT0iYnRuIHllbGxvdyIgaHJlZj0iI2NvbnRhY3QiIG9uQ2xpY2s9eyhlKSA9PiB7IGUucHJldmVudERlZmF1bHQoKTsgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImNvbnRhY3QiKS5zY3JvbGxJbnRvVmlldyh7IGJlaGF2aW9yOiAic21vb3RoIiB9KTsgfX0+CiAgICAgICAgICAgIDxJY29uIG5hbWU9InBpbiIgc2l6ZT17MTh9Lz4gzo3OuzE11oBOzrEgzr3OsSDOvM6xz4IgzrLPgc61zrnPggogICAgICAgICAgPC9hPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9InRpbWVsaW5lIj4KICAgICAgICB7d2luZG93LlRJTUVMSU5FLm1hcCgodCwgaSkgPT4gKAogICAgICAgICAgPGRpdiBrZXk9e2l9IGNsYXNzTmFtZT0idGwtaXRlbSI+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ5ZWFyIj57dC55ZWFyfTwvZGl2PgogICAgICAgICAgICA8aDQ+e3QudGl0bGV9PC9oND4KICAgICAgICAgICAgPHA+e3QudGV4dH08L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICApKX0KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICA8L3NlY3Rpb24+Cik7Cgpjb25zdCBPZmZlcnMgPSAoeyBkYXRhVmVyc2lvbiB9KSA9PiB7CiAgY29uc3QgW2ksIHNldEldID0gUmVhY3QudXNlU3RhdGUoMCk7CiAgY29uc3Qgb2ZmZXJzID0gd2luZG93Lk9GRkVSUzsKICBjb25zdCBsZW4gPSBvZmZlcnMubGVuZ3RoOwogIFJlYWN0LnVzZUVmZmVjdCgoKSA9PiB7CiAgICBzZXRJKDApOwogICAgY29uc3QgaWQgPSBzZXRJbnRlcnZhbCgoKSA9PiBzZXRJKHYgPT4gKHYgKyAxKSAlIGxlbiksIDYwMDApOwogICAgcmV0dXJuICgpID0+IGNsZWFySW50ZXJ2YWwoaWQpOwogIH0sIFtsZW4sIGRhdGFWZXJzaW9uXSk7CiAgY29uc3QgZ28gPSAoZCkgPT4gc2V0SSgodikgPT4gKHYgKyBkICsgbGVuKSAlIGxlbik7CiAgcmV0dXJuICgKICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ib2ZmZXJzIiBpZD0ib2ZmZXJzIj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lciI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InNlY3Rpb24taGVhZCIgc3R5bGU9e3sgbWFyZ2luQm90dG9tOiAwIH19PgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImV5ZWJyb3ciPsK3IM+Ez4HOrc+Hzr/Phc+DzrXPgiDPgM+Bzr/Pg8+Gzr/Pgc6tz4I8L2Rpdj4KICAgICAgICAgICAgPGgyIHN0eWxlPXt7IG1hcmdpblRvcDogMTAsIGNvbG9yOiAidmFyKC0tcGFwZXIpIiB9fT7Oms6xzrvOrc+CIM+EzrnOvM6tz4IsIDxzcGFuIGNsYXNzTmFtZT0iYWNjZW50LXllbGxvdyI+zrrOsc67z43PhM61z4HOtc+CIM61zrrPgM67zq7Ovs61zrnPgi48L3NwYW4+PC9oMj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXJvdXNlbCI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2Fyb3VzZWwtdHJhY2siPgogICAgICAgICAgICB7b2ZmZXJzLm1hcCgobywgaWR4KSA9PiAoCiAgICAgICAgICAgICAgPGRpdiBrZXk9e2lkeH0gY2xhc3NOYW1lPXtgc2xpZGUgJHtpID09PSBpZHggPyAiYWN0aXZlIiA6ICIifWB9PgogICAgICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJiYWRnZS1vZmZlciI+e28uYmFkZ2V9PC9zcGFuPgogICAgICAgICAgICAgICAgICA8aDM+e28udGl0bGV9IDxzcGFuIGNsYXNzTmFtZT0iYWNjZW50Ij57by50aXRsZUFjY2VudH08L3NwYW4+PC9oMz4KICAgICAgICAgICAgICAgICAgPHA+e28udGV4dH08L3A+CiAgICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPSJidG4geWVsbG93Ij7OlM61z4Igz4DOtc+BzrnPg8+Dz4zPhM61z4HOsSA8SWNvbiBuYW1lPSJhcnJvdyIgc2l6ZT17MTh9Lz48L2J1dHRvbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNsaWRlLWFydCI+PFByb2R1Y3RBcnQga2luZD17by5hcnR9Lz48L2Rpdj4KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgKSl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXJvdXNlbC1uYXYiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY2Fyb3VzZWwtZG90cyI+CiAgICAgICAgICAgICAge29mZmVycy5tYXAoKF8sIGlkeCkgPT4gKAogICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e2lkeH0gY2xhc3NOYW1lPXtgZG90LWJ0biAke2kgPT09IGlkeCA/ICJhY3RpdmUiIDogIiJ9YH0gb25DbGljaz17KCkgPT4gc2V0SShpZHgpfSBhcmlhLWxhYmVsPXtgU2xpZGUgJHtpZHggKyAxfWB9Lz4KICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXItYXJyb3dzIj4KICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0iY2FyLWFycm93IiBvbkNsaWNrPXsoKSA9PiBnbygtMSl9IGFyaWEtbGFiZWw9Is6gz4HOv863zrPOv8+NzrzOtc69zr8iPjxJY29uIG5hbWU9ImFycm93bGVmdCIgc2l6ZT17MTh9Lz48L2J1dHRvbj4KICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0iY2FyLWFycm93IiBvbkNsaWNrPXsoKSA9PiBnbygxKX0gYXJpYS1sYWJlbD0izpXPgM+MzrzOtc69zr8iPjxJY29uIG5hbWU9ImFycm93cmlnaHQiIHNpemU9ezE4fS8+PC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9zZWN0aW9uPgogICk7Cn07Cgpjb25zdCBFTUFJTEpTX1NFUlZJQ0VfSUQgID0gIllPVVJfU0VSVklDRV9JRCI7CmNvbnN0IEVNQUlMSlNfVEVNUExBVEVfSUQgPSAiWU9VUl9URU1QTEFURV9JRCI7Cgpjb25zdCBDb250YWN0ID0gKCkgPT4gewogIGNvbnN0IFtzZW50LCBzZXRTZW50XSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbc2VuZGluZywgc2V0U2VuZGluZ10gPSBSZWFjdC51c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW2Vycm9yLCBzZXRFcnJvcl0gPSBSZWFjdC51c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW2Zvcm0sIHNldEZvcm1dID0gUmVhY3QudXNlU3RhdGUoeyBuYW1lOiAiIiwgZW1haWw6ICIiLCBtc2c6ICIiIH0pOwogIGNvbnN0IHN1Ym1pdCA9IChlKSA9PiB7CiAgICBlLnByZXZlbnREZWZhdWx0KCk7CiAgICBzZXRFcnJvcihmYWxzZSk7CiAgICBpZiAoRU1BSUxKU19TRVJWSUNFX0lEID09PSAiWU9VUl9TRVJWSUNFX0lEIiB8fCAhd2luZG93LmVtYWlsanMpIHsKICAgICAgc2V0U2VudCh0cnVlKTsgc2V0VGltZW91dCgoKSA9PiBzZXRTZW50KGZhbHNlKSwgNDUwMCk7IHNldEZvcm0oeyBuYW1lOiAiIiwgZW1haWw6ICIiLCBtc2c6ICIiIH0pOyByZXR1cm47CiAgICB9CiAgICBzZXRTZW5kaW5nKHRydWUpOwogICAgd2luZG93LmVtYWlsanMuc2VuZChFTUFJTEpTX1NFUlZJQ0VfSUQsIEVNQUlMSlNfVEVNUExBVEVfSUQsIHsgZnJvbV9uYW1lOiBmb3JtLm5hbWUsIHJlcGx5X3RvOiBmb3JtLmVtYWlsLCBtZXNzYWdlOiBmb3JtLm1zZyB9KQogICAgICAudGhlbigoKSA9PiB7IHNldFNlbnQodHJ1ZSk7IHNldFNlbmRpbmcoZmFsc2UpOyBzZXRGb3JtKHsgbmFtZTogIiIsIGVtYWlsOiAiIiwgbXNnOiAiIiB9KTsgc2V0VGltZW91dCgoKSA9PiBzZXRTZW50KGZhbHNlKSwgNTAwMCk7IH0pCiAgICAgIC5jYXRjaCgoKSA9PiB7IHNldFNlbmRpbmcoZmFsc2UpOyBzZXRFcnJvcih0cnVlKTsgfSk7CiAgfTsKICByZXR1cm4gKAogICAgPHNlY3Rpb24gaWQ9ImNvbnRhY3QiIHN0eWxlPXt7IGJhY2tncm91bmQ6ICJ2YXIoLS1wYXBlcikiIH19PgogICAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFpbmVyIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic2VjdGlvbi1oZWFkIj4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJleWVicm93IiBzdHlsZT17eyBjb2xvcjogInZhcigtLXJlZCkiIH19PsK3IM61z4DOuc66zr/Ouc69z4nOvc6vzrE8L2Rpdj4KICAgICAgICAgICAgPGgyIHN0eWxlPXt7IG1hcmdpblRvcDogMTAgfX0+zqDOrc+Bzr3OsSDOsc+Az4wgz4TOvyDOvM6xzrPOsc62zq8uPGJyLz7OjM+Hzrkgz4PPhM61zq/Ou861IM68zq7Ovc+FzrzOsS48L2gyPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8cCBjbGFzc05hbWU9ImxlYWQiPs6Vzq/OvM6xz4PPhM61IM6xzr3Ov865z4fPhM6sIM66zqzOuM61IM68zq3Pgc6xLiDOkc69IM84zq3Ou861zrnPgiDOvc6xIM+Dzr/PhSDOus+BzrHPhM6uz4POv8+FzrzOtSDOus6sz4TOuSDOriDPiM6sz4fOvc61zrnPgiDOtM+Oz4HOvyDOs865zrEgz4PPhc6zzrrOtc66z4HOuc68zq3Ovc63IM63zrvOuc66zq/OsSDigJQgz4DOtc+CIM68zrHPgi4gzqPOv8+FIM6xz4DOsc69z4TOrs68zrUgzrHPhc64zrfOvM61z4HPjM69LjwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFjdC1ncmlkIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWN0LWNhcmQiPgogICAgICAgICAgICA8aDM+zqPPhM6/zrnPh861zq/OsSDOtc+AzrnOus6/zrnOvc+Jzr3Or86xz4I8L2gzPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFjdC1pdGVtIj48ZGl2IGNsYXNzTmFtZT0iaWNvIj48SWNvbiBuYW1lPSJwaW4iIHNpemU9ezIwfS8+PC9kaXY+PGRpdj48ZGl2IGNsYXNzTmFtZT0ibGFiZWwiPs6UzrnOtc+NzrjPhc69z4POtzwvZGl2PjxkaXYgY2xhc3NOYW1lPSJ2YWx1ZSI+e19ncygnYWRkcmVzcycsJ86Vz4HOvM6/z40gMjcsIM6nzrHOu866zq/OtM6xIDM0MTAwJyl9PC9kaXY+PC9kaXY+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWN0LWl0ZW0iPjxkaXYgY2xhc3NOYW1lPSJpY28iPjxJY29uIG5hbWU9InBob25lIiBzaXplPXsyMH0vPjwvZGl2PjxkaXY+PGRpdiBjbGFzc05hbWU9ImxhYmVsIj7OpM63zrvOrc+Gz4nOvc6/PC9kaXY+PGRpdiBjbGFzc05hbWU9InZhbHVlIj48YSBocmVmPXtgdGVsOiR7X2dzKCdwaG9uZScsJzIyMjEwMjMzOTEnKX1gfT57X2dzKCdwaG9uZV9kaXNwbGF5JywnMjIyMSAwMjMzOTEnKX08L2E+PC9kaXY+PC9kaXY+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWN0LWl0ZW0iPjxkaXYgY2xhc3NOYW1lPSJpY28iPjxJY29uIG5hbWU9Im1haWwiIHNpemU9ezIwfS8+PC9kaXY+PGRpdj48ZGl2IGNsYXNzTmFtZT0ibGFiZWwiPkVtYWlsPC9kaXY+PGRpdiBjbGFzc05hbWU9InZhbHVlIj48YSBocmVmPXtgbWFpbHRvOiR7X2dzKCdlbWFpbCcsJ2hlbGxvQHBhaXhuaWRva29zbW9zLmdyJyl9YH0+e19ncygnZW1haWwnLCdoZWxsb0BwYWl4bmlkb2tvc21vcy5ncicpfTwvYT48L2Rpdj48L2Rpdj48L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhY3QtaXRlbSI+PGRpdiBjbGFzc05hbWU9Imljby…jxJY29uIG5hbWU9ImNsb2NrIiBzaXplPXsyMH0vPjwvZGl2PjxkaXY+PGRpdiBjbGFzc05hbWU9ImxhYmVsIj7Ozs+BzrXPgiDOu861zrnPhM6/z4XPgc6zzq/Oxc+CPC9kaXY+PGRpdiBjbGFzc05hbWU9InZhbHVlIj57X2dzKCdob3VycycsJ86UzrXPhc+Ez4AgwrcgzqPOsc6CIM6XIDkgOjAwwqDioJMgMjE6MDAnKX08L2Rpdj48L2Rpdj48L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im1hcCI+CiAgICAgICAgICAgICAgPGlmcmFtZSB0aXRsZT0izqfOrM+Bz4TOt8+CIiBzcmM9Imh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHM/cT3OoM6xzrnPh869zrnOtM6/zrrPjM+DzrzOv8+CK86Rzr3Osc6zzr3Pjs+Dz4TOv8+FK86Vz4HOvM6/z40rMjcrzqfOsc67zrrOr860zrEmdD0mej0xNiZpZT1VVEY4Jml3bG9jPSZvdXRwdXQ9ZW1iZWQiIGxvYWRpbmc9ImxhenkiIHJlZmVycmVyUG9saWN5PSJuby1yZWZlcnJlci13aGVuLWRvd25ncmFkZSI+PC9pZnJhbWU+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8YSBjbGFzc05hbWU9ImJ0biB5ZWxsb3ciIHN0eWxlPXt7IG1hcmdpblRvcDogMTYgfX0gaHJlZj0iaHR0cHM6Ly9tYXBzLmFwcC5nb28uZ2wvN203NGNRajdNWFdwZ2NMVTkiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj4KICAgICAgICAgICAgICA8SWNvbiBuYW1lPSJwaW4iIHNpemU9ezE4fS8+IM6Gzr3Ov865zrPOvM6xIM+Dz4TOvyBHb29nbGUgTWFwcwogICAgICAgICAgICA8L2E+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxmb3JtIGNsYXNzTmFtZT0iY29udGFjdC1mb3JtIiBvblN1Ym1pdD17c3VibWl0fT4KICAgICAgICAgICAgICA8ZGl2PjxsYWJlbD7OjM69zr/OvM6xPC9sYWJlbD48aW5wdXQgcmVxdWlyZWQgdmFsdWU9e2Zvcm0ubmFtZX0gb25DaGFuZ2U9e2UgPT4gc2V0Rm9ybSh7Li4uZm9ybSwgbmFtZTogZS50YXJnZXQudmFsdWV9KX0gcGxhY2Vob2xkZXI9Is6gLs+HLiDOnM6xz4HOr86xIM6gzrHPgM6xzrTOv8+Azr/Pjc67zr/PhSIvPjwvZGl2PgogICAgICAgICAgICAgIDxkaXY+PGxhYmVsPkVtYWlsIM6uIM+EzrfOu86tz4bPic69zr88L2xhYmVsPjxpbnB1dCByZXF1aXJlZCB2YWx1ZT17Zm9ybS5lbWFpbH0gb25DaGFuZ2U9e2UgPT4gc2V0Rm9ybSh7Li4uZm9ybSwgZW1haWw6IGUudGFyZ2V0LnZhbHVlfSl9IHBsYWNlaG9sZGVyPSJlbWFpbEBleGFtcGxlLmdyIi8+PC9kaXY+CiAgICAgICAgICAgICAgPGRpdj48bGFiZWw+zpzOrs69z4XOvM6xPC9sYWJlbD48dGV4dGFyZWEgcmVxdWlyZWQgdmFsdWU9e2Zvcm0ubXNnfSBvbkNoYW5nZT17ZSA9PiBzZXRGb3JtKHsuLi5mb3JtLCBtc2c6IGUudGFyZ2V0LnZhbHVlfSl9IHBsYWNlaG9sZGVyPSLOqM6sz4fOvc+JIM60z47Pgc6/IM6zzrnOsSA1z4fPgc6/zr3OvyDOsc6zz4zPgc65LCDOvM+AzqzPhM62zrXPhCAzMOKCrOKApiI+PC90ZXh0YXJlYT48L2Rpdj4KICAgICAgICAgICAgICB7c2VudCAmJiA8ZGl2IGNsYXNzTmFtZT0iZm9ybS1zdWNjZXNzIj48SWNvbiBuYW1lPSJjaGVjayIgc2l6ZT17MTh9Lz4gzo3OuU6yz4HPzrFPjCDPhM6/IM68zq7Ovc+FzrzOrCDPg86/z4UhIM6YzrEgz4POv8+FIM6xz4AOsc69z4TOrs+Dz4kgzrHPhc64zrfOvM61z4HPjM69LjwvZGl2Pn0KICAgICAgICAgICAgICB7ZXJyb3IgJiYgPGRpdiBjbGFzc05hbWU9ImZvcm0tZXJyb3IiPuKaoO+4jyDOms6sz4TOuSDPgM6uzrPOtSDPg8+Ez4HOsc6yz4QuIM6gz4HPgc6xzrrOsc67zq8gzrrOsc67zq3Pg8+EzrUgzrzOsc+CIM+Dz4TOvyAyMjIxIDAyMzM5MS48L2Rpdj59CiAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9ImJ0biBwcmltYXJ5IiB0eXBlPSJzdWJtaXQiIGRpc2FibGVkPXtzZW5kaW5nfSBzdHlsZT17eyBhbGlnblNlbGY6ICJmbGV4LXN0YXJ0IiB9fT4KICAgICAgICAgICAgICAgIHtzZW5kaW5nID8gIs6Rz4DOv8+Dz4TOv867zq4uLi4iIDogPD48c3Bhbj7Okc+Azr/Pg8+Ezr/Ou86uIM68zrfOvc+NzrzOsc+Ezr/PgjwvcGFuPiA8SWNvbiBuYW1lPSJhcnJvdyIgc2l6ZT17MTh9Lz48Lz59CiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5Ub3A6IDE4LCBwYWRkaW5nOiAiMThweCAyMHB4IiwgYmFja2dyb3VuZDogInZhcigtLWluaykiLCBjb2xvcjogInZhcigtLXllbGxvdykiLCBib3JkZXJSYWRpdXM6IDE4LCBib3JkZXI6ICIzcHggc29saWQgdmFyKC0taW5rKSIgfX0+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LW1vbm8pIiwgZm9udFNpemU6IDExLCBsZXR0ZXJTcGFjaW5nOiAiMC4xNGVtIiwgdGV4dFRyYW5zZm9ybTogInVwcGVyY2FzZSIsIG9wYWNpdHk6IDAuNyB9fT7OoM6hzp/OpM6ZzpzOkc6jIM6kzpfOm86Vz4bOmM6dzp8/PC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRGYW1pbHk6ICJ2YXIoLS1mb250LWRpc3BsYXkpIiwgZm9udFNpemU6IDI2LCBmb250V2VpZ2h0OiA4MDAsIG1hcmdpblRvcDogNiwgY29sb3I6ICJ2YXIoLS1wYXBlcikiIH19Ps6gz4zPgc9bz4UgzrzOsc+CwrcgeyFnczIoJ3Bob25lX2Rpc3BsYXknLCcyMjIxIDAyMzM5MScpfTwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6ZTogMTQsIG9wYWNpdHk6IDAuNzUsIG1hcmdpblRvcDogNCB9fT57X2dzKCdob3VycycsJ86UzrXPhc+Ez4DOrs+BzrEgzq3Pic+CIM6jzqzOss6yz4HOsc+PzrMsIDA5O
+/* ============================================
+   Section components
+   ============================================ */
+
+
+
+/* Διαβάζει ρύθμιση από Supabase ή επιστρέφει fallback αν δεν έχει φορτωθεί */
+const _gs = (key, fallback) => (window.SITE_SETTINGS && window.SITE_SETTINGS[key] !== undefined && window.SITE_SETTINGS[key] !== '') ? window.SITE_SETTINGS[key] : (fallback !== undefined ? fallback : '');
+
+/* ----- Nav ----- */
+const Nav = ({ active, onNav }) => {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const close = () => setMobileOpen(false);
+  const go = (id) => { onNav(id); close(); };
+
+  return (
+    <>
+      <nav className="nav">
+        <div className="container nav-inner">
+          <a href="#home" className="brand" onClick={(e) => { e.preventDefault(); go("home"); }}>
+            <div className="brand-mark">
+              <svg viewBox="0 0 32 24" width="28" height="20">
+                <rect x="2" y="10" width="22" height="9" rx="1.5" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+                <rect x="18" y="5" width="9" height="9" rx="1.5" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+                <circle cx="8" cy="20" r="2.5" fill="#14110F"/>
+                <circle cx="20" cy="20" r="2.5" fill="#14110F"/>
+                <rect x="6" y="3" width="3" height="7" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+              </svg>
+            </div>
+            <div className="brand-name">
+              Παιχνιδοκόσμος
+              <span className="small">Αναγνώστου · Χαλκίδα</span>
+            </div>
+          </a>
+          <ul className={`nav-links${mobileOpen ? " mobile-open" : ""}`}>
+            {window.NAV_ITEMS.map(i => (
+              <li key={i.id}>
+                <a href={`#${i.id}`} className={active === i.id ? "active" : ""}
+                   onClick={(e) => { e.preventDefault(); go(i.id); }}>
+                  {i.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href={`tel:${_gs('phone','2221023391')}`} className="mobile-nav-cta">
+                📞 {_gs('phone','2221023391')}
+              </a>
+            </li>
+          </ul>
+          <a href={`tel:${_gs('phone','2221023391')}`} className="nav-cta">
+            <Icon name="phone" size={16}/>
+            {_gs('phone','2221023391')}
+          </a>
+          <button
+            className="nav-mobile-toggle"
+            aria-label={mobileOpen ? "Κλείσιμο menu" : "Άνοιγμα menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(v => !v)}
+          >
+            <Icon name={mobileOpen ? "close" : "menu"} size={20}/>
+          </button>
+        </div>
+      </nav>
+      {mobileOpen && <div className="nav-overlay" onClick={close} aria-hidden="true"/>}
+    </>
+  );
+};
+
+/* ----- Hero ----- */
+
+const Hero = ({ onNav, speed, motion }) => {
+  const trainStyle = { animationDuration: `${28 - speed * 2}s` };
+  return (
+    <section className="hero" id="home">
+      <div className="container hero-inner">
+        <div className="hero-copy">
+          <span className="hero-eyebrow"><span className="dot"></span>Στη Χαλκίδα από το 1978</span>
+          <h1>
+            Ο κόσμος του <span className="accent-red">παιχνιδιού</span>
+            <br/>ξεκινά <span className="squiggle">εδώ!</span>
+          </h1>
+          <p className="hero-lead">
+            Χιλιάδες παιχνίδια, εποχιακά είδη και έξυπνα δώρα σε ένα μαγαζί
+            που αγαπάει τα παιδιά εδώ και τρεις γενιές.
+          </p>
+          <div className="hero-actions">
+            <button className="btn primary" onClick={() => onNav("categories")}>
+              Δες τις κατηγορίες <Icon name="arrow" size={18}/>
+            </button>
+            <button className="btn" onClick={() => onNav("offers")}>
+              <Icon name="sparkle" size={18}/> Προσφορές
+            </button>
+          </div>
+          <div className="hero-stats">
+            <div className="stat"><div className="num">{_gs('stat1_num','47')}</div><div className="lbl">{_gs('stat1_label','χρόνια στη Χαλκίδα')}</div></div>
+            <div className="stat"><div className="num">{_gs('stat2_num','2.5K+')}</div><div className="lbl">{_gs('stat2_label','κωδικοί στο ράφι')}</div></div>
+            <div className="stat"><div className="num">{_gs('stat3_num','3')}</div><div className="lbl">{_gs('stat3_label','γενιές οικογένειας')}</div></div>
+          </div>
+        </div>
+
+        <div className="hero-stage">
+          <div className="sun"></div>
+          <div className="cloud cloud-1"></div>
+          <div className="cloud cloud-2"></div>
+          <div className="cloud cloud-3"></div>
+
+          <div className="star s1"></div>
+          <div className="star s2"></div>
+          <div className="star s3"></div>
+
+          <div className="gift-float"><GiftBox size={130}/></div>
+          <div className="balloon"><Balloon size={68} color="#E63329"/></div>
+
+          {motion !== false && (
+            <div className="train-wrap" style={trainStyle}>
+              <div className="bob">
+                <div className="smoke" style={{ left: 162, bottom: 130 }}>
+                  <div className="puff" style={{ animationDelay: "0s" }}></div>
+                  <div className="puff" style={{ animationDelay: "0.3s" }}></div>
+                  <div className="puff" style={{ animationDelay: "0.6s" }}></div>
+                  <div className="puff" style={{ animationDelay: "0.9s" }}></div>
+                </div>
+                <Train size={240}/>
+              </div>
+            </div>
+          )}
+
+          <div className="track">
+            <div className="rail top"></div>
+            <div className="ties"></div>
+            <div className="rail bot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ----- Marquee ----- */
+
+const Marquee = () => {
+  const defaultItems = "ΠΑΙΧΝΙΔΙΑ,ΕΚΠΑΙΔΕΥΤΙΚΑ,ΕΠΟΧΙΑΚΑ,ΔΩΡΑ,ΔΩΡΕΑΝ ΣΥΣΚΕΥΑΣΙΑ,ΠΑΡΑΛΑΒΗ ΑΠΟ ΤΟ ΚΑΤΑΣΤΗΜΑ";
+  const items = _gs('marquee_items', defaultItems).split(',').map(s => s.trim()).filter(Boolean);
+  const row = (
+    <span>
+      {items.map((it, i) => (
+        <React.Fragment key={i}>
+          {it}
+          <span className="dot">★</span>
+        </React.Fragment>
+      ))}
+    </span>
+  );
+  return (
+    <div className="marquee">
+      <div className="marquee-track">
+        {row}{row}{row}
+      </div>
+    </div>
+  );
+};
+
+/* ----- Categories ----- */
+
+const Categories = ({ onPick }) => {
+  const artFor = (a) => {
+    if (a === "blocks") return <IconBlocks/>;
+    if (a === "book") return <IconBook/>;
+    if (a === "star") return <IconStar/>;
+    if (a === "gift") return <IconGift/>;
+    return null;
+  };
+  return (
+    <section id="categories">
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow" style={{ color: "var(--red)" }}>· κατηγορίες</div>
+            <h2 style={{ marginTop: 10 }}>Διάλεξε τι ψάχνεις<br/>— το έχουμε.</h2>
+          </div>
+          <p className="lead">
+            Όλα τα κλασικά αγαπημένα, όλα τα νέα τρελά, και ό,τι χρειάζεσαι για
+            γενέθλια, γιορτές, διακοπές και κουραστικές απογευματινές βροχές.
+          </p>
+        </div>
+        <div className="cat-grid">
+          {window.CATEGORY_CARDS.map(c => (
+            <div key={c.id} className={`cat-card ${c.theme}`} onClick={() => onPick(c.id)}>
+              <div className="cat-art">{artFor(c.art)}</div>
+              <div>
+                <h3>{c.title}</h3>
+                <div className="cat-count">{c.count}</div>
+              </div>
+              <div className="cat-arrow"><Icon name="arrow" size={16}/></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ----- Products ----- */
+
+const AGE_OPTIONS = [
+  { value: "all", label: "Όλες" },
+  { value: "0+",  label: "0+" },
+  { value: "3+",  label: "3+" },
+  { value: "4+",  label: "4+" },
+  { value: "5+",  label: "5+" },
+  { value: "6+",  label: "6+" },
+];
+
+const Products = ({ filter, setFilter, onAdd, addedFlash, favorites, toggleFav, dataVersion }) => {
+  const [search, setSearch]       = React.useState("");
+  const [ageFilter, setAgeFilter] = React.useState("all");
+
+  const filtered = React.useMemo(() => {
+    let result = [...window.PRODUCTS];
+    if (filter !== "all") result = result.filter(p => p.cat === filter);
+    if (ageFilter !== "all") result = result.filter(p => p.age === ageFilter);
+    if (search.trim()) {
+      const q = search.toLowerCase().trim();
+      result = result.filter(p => p.name.toLowerCase().includes(q));
+    }
+    return result;
+  }, [filter, ageFilter, search, dataVersion]);
+
+  return (
+    <section className="products" id="products">
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow" style={{ color: "var(--red)" }}>· δημοφιλή τώρα</div>
+            <h2 style={{ marginTop: 10 }}>Τι αγαπούν τα παιδιά<br/>αυτές τις μέρες.</h2>
+          </div>
+          <p className="lead">
+            Επιλεγμένα από εμάς. Δοκιμασμένα από τα παιδιά του μαγαζιού.
+            Πρόσθεσε στο καλάθι σου ό,τι σου αρέσει — η παραγγελία ολοκληρώνεται στο κατάστημα.
+          </p>
+        </div>
+
+        <div className="cat-tabs">
+          {window.CATEGORIES.map(c => (
+            <button key={c.id} className={`cat-tab ${filter === c.id ? "active" : ""}`}
+                    onClick={() => setFilter(c.id)}>
+              {c.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="product-controls">
+          <div className="search-bar">
+            <svg className="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input
+              type="search"
+              placeholder="Αναζήτηση προϊόντος..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              aria-label="Αναζήτηση προϊόντων"
+            />
+          </div>
+          <div className="age-filter">
+            <span className="age-label">Ηλικία:</span>
+            {AGE_OPTIONS.map(opt => (
+              <button
+                key={opt.value}
+                className={`age-btn ${ageFilter === opt.value ? "active" : ""}`}
+                onClick={() => setAgeFilter(opt.value)}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="product-grid">
+          {filtered.length === 0 ? (
+            <div className="no-results">
+              <div className="emoji">🔍</div>
+              <p>Δεν βρέθηκαν προϊόντα.<br/>Δοκίμασε διαφορετική αναζήτηση.</p>
+            </div>
+          ) : filtered.map(p => (
+            <div key={p.id} className="product">
+              <div className={`product-img ${p.bg}`}>
+                {p.tag && <span className={`product-tag ${p.tag === "HOT" ? "hot" : ""}`}>{p.tag}</span>}
+                <button className={`product-fav ${favorites.includes(p.id) ? "on" : ""}`}
+                        onClick={() => toggleFav(p.id)} aria-label="Αγαπημένο">
+                  <Icon name={favorites.includes(p.id) ? "heart" : "heartOutline"} size={16}/>
+                </button>
+                {p.image
+                  ? <img src={p.image} alt={p.name} loading="lazy"/>
+                  : <ProductArt kind={p.art}/>
+                }
+              </div>
+              <div className="product-body">
+                <div className="meta">Ηλικία {p.age}</div>
+                <h3>{p.name}</h3>
+                <div className="product-row">
+                  <div className="product-price">
+                    {p.oldPrice && <span className="old">{p.oldPrice.toFixed(2)}€</span>}
+                    {p.price.toFixed(2)}€
+                  </div>
+                  <button className={`product-add ${addedFlash === p.id ? "added" : ""}`}
+                          onClick={() => onAdd(p)} aria-label="Προσθήκη στο καλάθι">
+                    <Icon name={addedFlash === p.id ? "check" : "plus"} size={18}/>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ----- About / Timeline ----- */
+
+const About = () => (
+  <section id="about">
+    <div className="container about-grid">
+      <div className="about-lead">
+        <div className="eyebrow" style={{ color: "var(--red)" }}>· η ιστορία μας</div>
+        <h2 style={{ marginTop: 10 }}>Τρεις γενιές, ένα μαγαζάκι, χιλιάδες χαμόγελα.</h2>
+        <p>
+          Ο Παιχνιδόκοσμος Αναγνώστου ξεκίνησε ως ένα μικρό οικογενειακό κατάστημα
+          στην καρδιά της Χαλκίδας. Σήμερα, η τρίτη γενιά της οικογένειας συνεχίζει
+          με την ίδια αγάπη — επιλέγοντας ένα-ένα τα παιχνίδια που θα γέμιζαν τα δικά της παιδικά χρόνια.
+        </p>
+        <p>
+          Δεν είμαστε αλυσίδα. Είμαστε γείτονες. Έλα να πεις «καλημέρα».
+        </p>
+        <div style={{ marginTop: 22, display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <a className="btn yellow" href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); }}>
+            <Icon name="pin" size={18}/> Έλα να μας βρεις
+          </a>
+        </div>
+      </div>
+
+      <div className="timeline">
+        {window.TIMELINE.map((t, i) => (
+          <div key={i} className="tl-item">
+            <div className="year">{t.year}</div>
+            <h4>{t.title}</h4>
+            <p>{t.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ----- Offers carousel ----- */
+
+const Offers = ({ dataVersion }) => {
+  const [i, setI] = React.useState(0);
+  const offers = window.OFFERS;
+  const len = offers.length;
+  React.useEffect(() => {
+    setI(0);
+    const id = setInterval(() => setI(v => (v + 1) % len), 6000);
+    return () => clearInterval(id);
+  }, [len, dataVersion]);
+  const go = (d) => setI((v) => (v + d + len) % len);
+
+  return (
+    <section className="offers" id="offers">
+      <div className="container">
+        <div className="section-head" style={{ marginBottom: 0 }}>
+          <div>
+            <div className="eyebrow">· τρέχουσες προσφορές</div>
+            <h2 style={{ marginTop: 10, color: "var(--paper)" }}>
+              Καλές τιμές, <span className="accent-yellow">καλύτερες εκπλήξεις.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div className="carousel">
+          <div className="carousel-track">
+            {offers.map((o, idx) => (
+              <div key={idx} className={`slide ${i === idx ? "active" : ""}`}>
+                <div>
+                  <span className="badge-offer">{o.badge}</span>
+                  <h3>{o.title} <span className="accent">{o.titleAccent}</span></h3>
+                  <p>{o.text}</p>
+                  <button className="btn yellow">
+                    Δες περισσότερα <Icon name="arrow" size={18}/>
+                  </button>
+                </div>
+                <div className="slide-art">
+                  <ProductArt kind={o.art}/>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="carousel-nav">
+            <div className="carousel-dots">
+              {offers.map((_, idx) => (
+                <button key={idx} className={`dot-btn ${i === idx ? "active" : ""}`}
+                        onClick={() => setI(idx)} aria-label={`Slide ${idx + 1}`}/>
+              ))}
+            </div>
+            <div className="car-arrows">
+              <button className="car-arrow" onClick={() => go(-1)} aria-label="Προηγούμενο">
+                <Icon name="arrowleft" size={18}/>
+              </button>
+              <button className="car-arrow" onClick={() => go(1)} aria-label="Επόμενο">
+                <Icon name="arrowright" size={18}/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ----- Contact ----- */
+
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+const Contact = () => {
+  const [sent, setSent]       = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [error, setError]     = React.useState(false);
+  const [form, setForm]       = React.useState({ name: "", email: "", msg: "" });
+
+  const submit = (e) => {
+    e.preventDefault();
+    setError(false);
+
+    if (EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" || !window.emailjs) {
+      setSent(true);
+      setTimeout(() => setSent(false), 4500);
+      setForm({ name: "", email: "", msg: "" });
+      return;
+    }
+
+    setSending(true);
+    window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name: form.name,
+      reply_to:  form.email,
+      message:   form.msg,
+    }).then(() => {
+      setSent(true);
+      setSending(false);
+      setForm({ name: "", email: "", msg: "" });
+      setTimeout(() => setSent(false), 5000);
+    }).catch(() => {
+      setSending(false);
+      setError(true);
+    });
+  };
+
+  return (
+    <section id="contact" style={{ background: "var(--paper)" }}>
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow" style={{ color: "var(--red)" }}>· επικοινωνία</div>
+            <h2 style={{ marginTop: 10 }}>Πέρνα από το μαγαζί.<br/>Ή στείλε μήνυμα.</h2>
+          </div>
+          <p className="lead">
+            Είμαστε ανοιχτά κάθε μέρα. Αν θέλεις να σου κρατήσουμε κάτι ή ψάχνεις
+            δώρο για συγκεκριμένη ηλικία — πες μας. Σου απαντάμε αυθημερόν.
+          </p>
+        </div>
+
+        <div className="contact-grid">
+          <div className="contact-card">
+            <h3>Στοιχεία επικοινωνίας</h3>
+            <div className="contact-item">
+              <div className="ico"><Icon name="pin" size={20}/></div>
+              <div>
+                <div className="label">Διεύθυνση</div>
+                <div className="value">{_gs('address','Ερμού 27, Χαλκίδα 34100')}</div>
+              </div>
+            </div>
+            <div className="contact-item">
+              <div className="ico"><Icon name="phone" size={20}/></div>
+              <div>
+                <div className="label">Τηλέφωνο</div>
+                <div className="value"><a href={`tel:${_gs('phone','2221023391')}`}>{_gs('phone_display','2221 023391')}</a></div>
+              </div>
+            </div>
+            <div className="contact-item">
+              <div className="ico"><Icon name="mail" size={20}/></div>
+              <div>
+                <div className="label">Email</div>
+                <div className="value"><a href={`mailto:${_gs('email','hello@paixnidokosmos.gr')}`}>{_gs('email','hello@paixnidokosmos.gr')}</a></div>
+              </div>
+            </div>
+            <div className="contact-item">
+              <div className="ico"><Icon name="clock" size={20}/></div>
+              <div>
+                <div className="label">Ώρες λειτουργίας</div>
+                <div className="value">{_gs('hours','Δευτ – Σαβ · 09:00 – 21:00')}</div>
+              </div>
+            </div>
+
+            <div className="map">
+              <iframe
+                title="Χάρτης"
+                src="https://maps.google.com/maps?q=Παιχνιδοκόσμος+Αναγνώστου+Ερμού+27+Χαλκίδα&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a className="btn yellow" style={{ marginTop: 16 }} href="https://maps.app.goo.gl/7m74cQj7MXWpgcLU9" target="_blank" rel="noopener">
+              <Icon name="pin" size={18}/> Άνοιγμα στο Google Maps
+            </a>
+          </div>
+
+          <div>
+            <form className="contact-form" onSubmit={submit}>
+              <div>
+                <label>Όνομα</label>
+                <input required value={form.name} onChange={e => setForm({...form, name: e.target.value})} placeholder="Π.χ. Μαρία Παπαδοπούλου"/>
+              </div>
+              <div>
+                <label>Email ή τηλέφωνο</label>
+                <input required value={form.email} onChange={e => setForm({...form, email: e.target.value})} placeholder="email@example.gr"/>
+              </div>
+              <div>
+                <label>Μήνυμα</label>
+                <textarea required value={form.msg} onChange={e => setForm({...form, msg: e.target.value})} placeholder="Ψάχνω δώρο για 5χρονο αγόρι, μπάτζετ 30€…"></textarea>
+              </div>
+
+              {sent && (
+                <div className="form-success">
+                  <Icon name="check" size={18}/> Έλαβα το μήνυμά σου! Θα σου απαντήσω αυθημερόν.
+                </div>
+              )}
+              {error && (
+                <div className="form-error">
+                  ⚠️ Κάτι πήγε στραβά. Παρακαλώ καλέστε μας στο 2221 023391.
+                </div>
+              )}
+
+              <button className="btn primary" type="submit" disabled={sending} style={{ alignSelf: "flex-start" }}>
+                {sending ? "Αποστολή..." : <><span>Αποστολή μηνύματος</span> <Icon name="arrow" size={18}/></>}
+              </button>
+
+              <div style={{ marginTop: 18, padding: "18px 20px", background: "var(--ink)", color: "var(--yellow)", borderRadius: 18, border: "3px solid var(--ink)" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7 }}>ΠΡΟΤΙΜΑΣ ΤΗΛΕΦΩΝΟ?</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 800, marginTop: 6, color: "var(--paper)" }}>
+                  Πάρε μας · {_gs('phone_display','2221 023391')}
+                </div>
+                <div style={{ fontSize: 14, opacity: 0.75, marginTop: 4 }}>{_gs('hours','Δευτέρα έως Σάββατο, 09:00 – 21:00')}</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ----- Footer ----- */
+
+const Footer = ({ onNav }) => (
+  <footer>
+    <div className="container">
+      <div className="footer-grid">
+        <div className="footer-brand">
+          <div className="brand" style={{ color: "var(--paper)" }}>
+            <div className="brand-mark"><svg viewBox="0 0 32 24" width="28" height="20">
+              <rect x="2" y="10" width="22" height="9" rx="1.5" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+              <rect x="18" y="5" width="9" height="9" rx="1.5" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+              <circle cx="8" cy="20" r="2.5" fill="#14110F"/>
+              <circle cx="20" cy="20" r="2.5" fill="#14110F"/>
+              <rect x="6" y="3" width="3" height="7" fill="#FFD60A" stroke="#14110F" strokeWidth="1.6"/>
+            </svg></div>
+            <div className="brand-name">Παιχνιδοκόσμος
+              <span className="small" style={{ color: "var(--yellow)", opacity: 1 }}>Αναγνώστου · est. 1978</span>
+            </div>
+          </div>
+          <p>Παιχνίδια, εκπαιδευτικά, εποχιακά και δώρα για όλες τις ηλικίες.</p>
+          <div className="socials">
+            {_gs('facebook_url','') && <a href={_gs('facebook_url','#')} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Icon name="fb" size={18}/></a>}
+            {_gs('instagram_url','') && <a href={_gs('instagram_url','#')} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Icon name="ig" size={18}/></a>}
+            {_gs('tiktok_url','') && <a href={_gs('tiktok_url','#')} target="_blank" rel="noopener noreferrer" aria-label="TikTok"><Icon name="tt" size={18}/></a>}
+            {_gs('youtube_url','') && <a href={_gs('youtube_url','#')} target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Icon name="yt" size={18}/></a>}
+          </div>
+        </div>
+        <div>
+          <h4>Κατάστημα</h4>
+          <ul>
+            <li><a href="#categories" onClick={(e) => { e.preventDefault(); onNav("categories"); }}>Κατηγορίες</a></li>
+            <li><a href="#products" onClick={(e) => { e.preventDefault(); onNav("products"); }}>Δημοφιλή</a></li>
+            <li><a href="#offers" onClick={(e) => { e.preventDefault(); onNav("offers"); }}>Προσφορές</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Εμείς</h4>
+          <ul>
+            <li><a href="#about" onClick={(e) => { e.preventDefault(); onNav("about"); }}>Η ιστορία μας</a></li>
+            <li><a href="#contact" onClick={(e) => { e.preventDefault(); onNav("contact"); }}>Επικοινωνία</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Βοήθεια</h4>
+          <ul>
+            <li><a href="#">Παραγγελίες</a></li>
+            <li><a href="#">Επιστροφές</a></li>
+            <li><a href="#">Όροι χρήσης</a></li>
+            <li><a href="#">Απόρρητο</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bot">
+        <div>© 2026 Παιχνιδοκόσμος Αναγνώστου · Ερμού 27, Χαλκίδα</div>
+        <div>Με αγάπη από το 1978 ♥</div>
+      </div>
+    </div>
+  </footer>
+);
+
+window.Nav = Nav;
+window.Hero = Hero;
+window.Marquee = Marquee;
+window.Categories = Categories;
+window.Products = Products;
+window.About = About;
+window.Offers = Offers;
+window.Contact = Contact;
+window.Footer = Footer;

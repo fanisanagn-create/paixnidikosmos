@@ -2,8 +2,6 @@
    Section components
    ============================================ */
 
-
-
 /* Διαβάζει ρύθμιση από Supabase ή επιστρέφει fallback αν δεν έχει φορτωθεί */
 const _gs = (key, fallback) => (window.SITE_SETTINGS && window.SITE_SETTINGS[key] !== undefined && window.SITE_SETTINGS[key] !== '') ? window.SITE_SETTINGS[key] : (fallback !== undefined ? fallback : '');
 
@@ -41,11 +39,6 @@ const Nav = ({ active, onNav }) => {
                 </a>
               </li>
             ))}
-            <li>
-              <a href={`tel:${_gs('phone','2221023391')}`} className="mobile-nav-cta">
-                📞 {_gs('phone','2221023391')}
-              </a>
-            </li>
           </ul>
           <a href={`tel:${_gs('phone','2221023391')}`} className="nav-cta">
             <Icon name="phone" size={16}/>
@@ -211,7 +204,7 @@ const AGE_OPTIONS = [
   { value: "6+",  label: "6+" },
 ];
 
-const Products = ({ filter, setFilter, onAdd, addedFlash, favorites, toggleFav, dataVersion }) => {
+const Products = ({ filter, setFilter, dataVersion }) => {
   const [search, setSearch]       = React.useState("");
   const [ageFilter, setAgeFilter] = React.useState("all");
 
@@ -236,7 +229,7 @@ const Products = ({ filter, setFilter, onAdd, addedFlash, favorites, toggleFav, 
           </div>
           <p className="lead">
             Επιλεγμένα από εμάς. Δοκιμασμένα από τα παιδιά του μαγαζιού.
-            Πρόσθεσε στο καλάθι σου ό,τι σου αρέσει — η παραγγελία ολοκληρώνεται στο κατάστημα.
+            Έλα να τα βρεις στο κατάστημα ή τηλεφώνησέ μας για οποιαδήποτε ερώτηση.
           </p>
         </div>
 
@@ -286,10 +279,6 @@ const Products = ({ filter, setFilter, onAdd, addedFlash, favorites, toggleFav, 
             <div key={p.id} className="product">
               <div className={`product-img ${p.bg}`}>
                 {p.tag && <span className={`product-tag ${p.tag === "HOT" ? "hot" : ""}`}>{p.tag}</span>}
-                <button className={`product-fav ${favorites.includes(p.id) ? "on" : ""}`}
-                        onClick={() => toggleFav(p.id)} aria-label="Αγαπημένο">
-                  <Icon name={favorites.includes(p.id) ? "heart" : "heartOutline"} size={16}/>
-                </button>
                 {p.image
                   ? <img src={p.image} alt={p.name} loading="lazy"/>
                   : <ProductArt kind={p.art}/>
@@ -298,15 +287,9 @@ const Products = ({ filter, setFilter, onAdd, addedFlash, favorites, toggleFav, 
               <div className="product-body">
                 <div className="meta">Ηλικία {p.age}</div>
                 <h3>{p.name}</h3>
-                <div className="product-row">
-                  <div className="product-price">
-                    {p.oldPrice && <span className="old">{p.oldPrice.toFixed(2)}€</span>}
-                    {p.price.toFixed(2)}€
-                  </div>
-                  <button className={`product-add ${addedFlash === p.id ? "added" : ""}`}
-                          onClick={() => onAdd(p)} aria-label="Προσθήκη στο καλάθι">
-                    <Icon name={addedFlash === p.id ? "check" : "plus"} size={18}/>
-                  </button>
+                <div className="product-price">
+                  {p.oldPrice && <span className="old">{p.oldPrice.toFixed(2)}€</span>}
+                  {p.price.toFixed(2)}€
                 </div>
               </div>
             </div>
